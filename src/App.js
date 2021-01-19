@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from "axios";
+
 
 class App extends Component {
 
@@ -12,12 +14,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": "5ae314507amsh08d20dc5a100a62p133dc6jsn10814122861f",
-        "x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com"
+    const options = {
+      method: 'GET',
+      url: 'https://edamam-recipe-search.p.rapidapi.com/search',
+      params: {q: 'chicken'},
+      headers: {
+        'x-rapidapi-key': '5ae314507amsh08d20dc5a100a62p133dc6jsn10814122861f',
+        'x-rapidapi-host': 'edamam-recipe-search.p.rapidapi.com'
       }
+    };
+    
+    axios.request(options).then(function (response) {
+      console.log(response.data);
+
+    }).catch(function (error) {
+      console.error(error);
     })
       .then(res => res.json())
       .then(json => {
