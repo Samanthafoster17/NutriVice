@@ -3,14 +3,15 @@ import './App.css';
 import axios from "axios";
 
 
+
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      hits: [],
       isLoaded: false,
-    }
+    };
   }
 
   componentDidMount() {
@@ -22,29 +23,25 @@ class App extends Component {
         'x-rapidapi-key': '5ae314507amsh08d20dc5a100a62p133dc6jsn10814122861f',
         'x-rapidapi-host': 'edamam-recipe-search.p.rapidapi.com'
       }
-    };
+      
+      
+    }
     
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-
-    }).catch(function (error) {
-      console.error(error);
-    })
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          hits: json,
-        })
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    axios.request(options).then(response => this.setState({
+      hits: response.data,
+      isLoaded: true
+    }))
+      
+    .catch(err =>{
+      console.log(err);
+    });
 
   }
+  
 
   render() {
     var { isLoaded, hits } = this.state;
+    console.log(this.state)
 
     if (!isLoaded) {
       return <div>Loading...</div>
