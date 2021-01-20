@@ -52,7 +52,7 @@ class App extends Component {
         <div className="App">
 
           <ul>
-            { hits.recipe.map(hits => (
+            { hits.hits.map(hits => (
               <li key={hits.recipe.label}>
                 Recipe: {hits.recipe.label} | Calories: {hits.recipe.calories}
               </li>
