@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+// import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 function Signup() {
 
