@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import Recipe from "../Recipe";
+import Dinner from "../Dinner";
 import API from "../../utils/API";
 
 
 
-function RecipeSearch() {
+function DinnerSearch() {
   
   const [recipe, setRecipe] = useState([])
-  const term = "chicken";
+  const term = "Dinner, diet=balanced";
   
 
   useEffect(() => {
@@ -18,15 +18,17 @@ function RecipeSearch() {
  
   console.log(recipe)
 
+
+  
   return (
     <div>
-  {recipe.map(x => (
-    <Recipe key={x.recipe.title} title={x.recipe.label} calories={x.recipe.calories} image={x.recipe.image} />
+  {recipe.slice(0, 2).map(x => (
+    <Dinner key={x .recipe.title} title={x.recipe.label} url={x.recipe.url} calories={x.recipe.calories} image={x.recipe.image} />
   ))}
     </div>
   )
 }
 
   
-  export default RecipeSearch;
+  export default DinnerSearch;
   
