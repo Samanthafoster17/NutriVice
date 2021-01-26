@@ -5,7 +5,7 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 function Signin() {
 
     return (
-      <div className="jumbotron main">
+      <div className="container-fluid main">
           <div className="container-fluid">
               <h1 className="lead brand">
                   NutriVice

@@ -5,7 +5,7 @@ import './style.css';
 function Signup() {
 
     return (
-      <div className="jumbotron main">
+      <div className="container-fluid main">
           <div className="container-fluid">
               <h1 className="lead brand">
                   NutriVice
