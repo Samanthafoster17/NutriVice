@@ -1,8 +1,8 @@
 // import Signup from './components/Signup';
 import './App.css';
-import Nav from './components/Nav';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import SearchResultContainer from './components/SearchResultContainer';
+// import Nav from './components/Nav';
+// import { BrowserRouter, Switch, Route} from 'react-router-dom';
+// import SearchResultContainer from './components/SearchResultContainer';
 import Spoonacular from './components/Spoonacular';
 
 // import SearchResultContainer from './components/SearchResultContainer';
@@ -16,8 +16,9 @@ function App(){
  
   return(
     <div>
-    <Nav />
-    <Signup />
+      <Spoonacular />
+    {/* <Nav />
+    <Signup /> */}
         {/* <SearchResultContainer />; */}
     </div>
   )

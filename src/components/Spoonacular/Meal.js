@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 export default function Meal({ meal }) {
  const [imageUrl, setImageUrl] = useState("");
+
   
 
  useEffect(() => {
@@ -11,6 +12,7 @@ export default function Meal({ meal }) {
      .then((respone) => respone.json())
      .then((data) => {
          setImageUrl(data.image);
+         console.log(data)
      })
      .catch(() => {
          console.log("error");
@@ -23,11 +25,11 @@ export default function Meal({ meal }) {
            <h1>{meal.title}</h1>
            <img src={imageUrl} alt="recipe" />
            <ul>
-               <li>Preperation time: {meal.readyInMinute} minutes </li>
+               <li>Preperation time: {meal.readyInMinutes} minutes </li>
                <li>Number of servings: {meal.servings} </li>
            </ul>
 
-           <a href={meal.aourceUrl}>Go to recipe</a>
+           <a href={meal.sourceUrl}>Go to recipe</a>
         </article>
     )
 }
