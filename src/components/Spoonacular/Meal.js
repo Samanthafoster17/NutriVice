@@ -8,7 +8,7 @@ export default function Meal({ meal }) {
      fetch(
          `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=949cc38773a947e191d05b89a2b7e263&includeNutrition=false`
      )
-     .then((respone) => respone.json())
+     .then((response) => response.json())
      .then((data) => {
          setImageUrl(data.image);
      })
@@ -27,7 +27,7 @@ export default function Meal({ meal }) {
                <li>Number of servings: {meal.servings} </li>
            </ul>
 
-           <a href={meal.aourceUrl}>Go to recipe</a>
+           <a href={meal.sourceUrl}>Go to recipe</a>
         </article>
     )
 }
