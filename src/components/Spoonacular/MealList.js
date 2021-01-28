@@ -13,7 +13,8 @@ export default function MealList({mealData}) {
                    <li>Cal: {nutrients.calories.toFixed(0)}</li>
                    <li>Carb: {nutrients.carbohydrates.toFixed(0)}</li>
                    <li>Fat: {nutrients.fat.toFixed(0)}</li>
-                   <li>Protien {nutrients.protein.toFixed(0)}</li>
+                   <li>Protien: {nutrients.protein.toFixed(0)}</li>
+                   <li>Allergens:</li>
                </ul>
            </section>
 
