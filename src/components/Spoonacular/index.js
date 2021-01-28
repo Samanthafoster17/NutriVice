@@ -8,12 +8,12 @@ function Spoonacular() {
 
    function handleChange(e) {
     setCalories(e.target.value)
-    setExclude(e.target.value)
+    // setExclude(e.target.value)
    }
  
 function getMealData() {
   fetch(
-  `https://api.spoonacular.com/mealplanner/generate?apiKey=949cc38773a947e191d05b89a2b7e263&timeFrame=day&targetCalories=${calories}&exlude=${exclude}`
+  `https://api.spoonacular.com/mealplanner/generate?apiKey=d794e7aca5614ee0839c87d4d34ed50c&timeFrame=day&targetCalories=${calories}`
   )
   .then((response) => response.json())
   .then((data) => {
