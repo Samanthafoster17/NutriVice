@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
-import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+// import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 function Signup() {
 
     return (
-      <div className="jumbotron main">
+      <div className="container-fluid main">
           <div className="container-fluid">
               <h1 className="lead brand">
                   NutriVice
