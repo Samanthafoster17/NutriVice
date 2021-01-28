@@ -9,7 +9,7 @@ export default function Meal({ meal }) {
      fetch(
          `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=d794e7aca5614ee0839c87d4d34ed50c&includeNutrition=false`
      )
-     .then((respone) => respone.json())
+     .then((response) => response.json())
      .then((data) => {
          setImageUrl(data.image);
          console.log(data)
