@@ -12,12 +12,12 @@ function Signin() {
               <h1 className="lead brand">
                   NutriVice
               </h1>
-              <p className="display-4 quotes">
+              <div className="display-4 quotes">
               <h3> Famous quote</h3>
-              “Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”
-                <h4> – Horace</h4>
-               </p>
-               
+              <h4>“Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”</h4>
+                <h6> – Horace</h6>
+               </div>
+              
                {/* user signin form */}
               <form className="signin">
             <div className="mb-3">
@@ -28,7 +28,7 @@ function Signin() {
                <label for="signinpassword" className="form-label">Password</label>
                <input type="password" className="form-control" aria-describedby="emailhelp" onChange={(e) => setLoginPassword(e.target.value)}  />
             </div>
-            <button type="submit" class="btn btn-primary" onClick={login} >Signin</button>
+            <button type="submit" class="btn btn-primary" >Signin</button>
             <div id="emailHelp" className="form-text">Don't have an account yet? <hr />
              <button className="btn btn-success " href="/signup"> Signup </button>
             </div>
