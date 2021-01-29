@@ -4,7 +4,6 @@ import Signin from './components/Signin';
 import './App.css';
 import BMI from "./components/Spoonacular/BMI";
 import Spoonacular from './components/Spoonacular';
-import ActivityLevel from "./components/Spoonacular/ActivityLevel";
 import DietPref from "./components/Spoonacular/DietPref";
 import Chart from "./components/Chart/";
 import LandingPage from "./pages/LandingPage";
@@ -23,6 +22,7 @@ function App() {
         <Route exact path="/" component={LandingPage}/>
         <Route exact path="/bmi" component={BMI} />
         <Route exact path="/ActivityLevel" component={ActivityLevel} />
+
         <Route exact path="/DietPref" component={DietPref} />
         <Route exact path="/MealPlan" component={Spoonacular} />
         <Route exact path="/Chart" component={Chart} />
