@@ -4,23 +4,23 @@ import { Line } from 'react-chartjs-2';
 const Chart = () =>{
 
     const data = {
-        labels: ['week1', 'week2', 'week3', 'week4',],
+        labels: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         datasets: [
             {
-                label: 'Month One',
-                data: [145, 146, 150, 152],
-                borderColor: ['rgba(255, 206, 86, 0.2)'],
-                backgroundColor: ['rgba(255, 206, 86, 0.2)'],
-                pointBackgroundColor: 'rgba(255, 206, 86, 0.2)',
-                pointBorderColor: 'rgba(255, 206, 86, 0.2)'
+                label: 'Week One',
+                data: [140, 145, 146, 150, 152, 155, 162],
+                borderColor: ['#2d6a4f'],
+                backgroundColor: ['#52B788'],
+                pointBackgroundColor: '#D8F3dC',
+                pointBorderColor: '#081c15'
              },
              {
-                label: 'Month Two',
-                data: [155, 158, 163, 168],
-                borderColor: ['rgba(54, 162, 235, 0.2)'],
-                backgroundColor: ['rgba(54, 162, 235, 0.2)'],
-                pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
-                pointBorderColor: 'rgba(54, 162, 235, 0.2)'
+                label: 'Week Two',
+                data: [155, 158, 163, 168, 165, 168, 170],
+                borderColor: ['#2d6a4f'],
+                backgroundColor: ['#52B788'],
+                pointBackgroundColor: '#D8F3dC',
+                pointBorderColor: '#081c15'
              },
             
         ]
@@ -29,7 +29,7 @@ const Chart = () =>{
     const options = {
         title:{
             display: true,
-            text: 'Line Chart'
+            text: 'Progress'
         },
         scales: {
             yAxes:[
