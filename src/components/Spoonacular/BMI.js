@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 
 export default class BMI extends React.Component {
 
@@ -11,12 +9,20 @@ export default class BMI extends React.Component {
       heightFeet: '',
       heightInch: '',
       weight: '',
+      activityLevel: '',
+      gender: '',
+      age: '',
+      goalWeight: '',
     }
 
     this.handleHeightFeetChange = this.handleHeightFeetChange.bind(this);
     this.handleHeightInchChange = this.handleHeightInchChange.bind(this);
     this.handleWeightChange = this.handleWeightChange.bind(this);
     this.calculateBMI = this.calculateBMI.bind(this);
+    this.handleActivityLevelChange = this.handleActivityLevelChange.bind(this);
+    this.handleGenderChange = this.handleGenderChange.bind(this);
+    this.handleAgeChange = this.handleAgeChange.bind(this);
+    this.handleGoalWeightChange = this.handleGoalWeightChange.bind(this);
   }
 
   handleHeightFeetChange(event) {
@@ -36,6 +42,31 @@ export default class BMI extends React.Component {
       weight: event.target.value
     });
   }
+
+  handleActivityLevelChange(event) {
+    this.setState({
+      activityLevel: event.target.value
+    });
+  }
+
+  handleGenderChange(event) {
+    this.setState({
+      gender: event.target.value
+    });
+  }
+
+  handleAgeChange(event) {
+    this.setState({
+      age: event.target.value
+    })
+  }
+
+  handleGoalWeightChange(event) {
+    this.setState({
+      goalWeight: event.target.value
+    });
+  }
+
 
   calculateBMI() {
     if (this.state.weight && this.state.heightFeet && this.state.heightInch) {
@@ -86,24 +117,119 @@ export default class BMI extends React.Component {
     return bmiResults;
   }
 
+
+  getBMR() {
+    if (this.state.weight && this.state.heightFeet && this.state.heightInch && this.state.age && this.state.goalWeight) {
+      let INCHES_IN_FEET = 12;
+
+      var height = Number(this.state.heightFeet);
+     
+      height *= INCHES_IN_FEET;
+    
+      height += Number(this.state.heightInch);
+
+      if (this.state.gender === "Male") {
+
+        let bmr = 66.47 + (this.state.weight * 6.24) + (12.7 * height) - (6.755 * this.state.age);
+
+        return bmr.toFixed(2)
+      }
+
+      else if (this.state.gender === "Female") {
+        let bmr = 655.51 + (4.35 * this.state.weight) + (4.7 * height) - (4 - 7 * this.state.age);
+       
+        return bmr.toFixed(2)
+
+      }
+      else {
+        let bmr = "";
+        return bmr
+      }
+    }
+  }
+
+  getCalPerDay(bmr) {
+   
+    if (this.state.activityLevel && this.state.weight && this.state.heightFeet && this.state.heightInch && this.state.age && this.state.goalWeight) {
+
+     if (this.state.goalWeight === "lose") {
+    
+
+      if(this.state.activityLevel === "little") {
+       let cpd = (bmr * 1.2);
+         console.log("cpd")
+        return cpd.toFixed(2)
+      } 
+      else if (this.state.activityLevel === "light") {
+        let cpd = (bmr * 1.375)
+        return cpd.toFixed(2)
+      } 
+      else if (this.state.activityLevel === "moderate") {
+        let cpd = (bmr * 1.55)
+        return cpd.toFixed(2)
+      }
+
+      else if (this.state.activityLevel === "very") {
+        let cpd = (bmr * 1.725)
+        return cpd.toFixed(2)
+      }
+      else if (this.state.activityLevel === "extra") {
+        let cpd = (bmr * 1.9)
+        return cpd.toFixed(2)
+      }
+     } 
+  
+    else  {
+    if (this.state.activityLevel === "little") {
+  
+     let cpd = ((bmr * 1.2) + (bmr * 0.15));
+     
+      return cpd.toFixed(2)
+    } 
+    else if (this.state.activityLevel === "light") {
+      let cpd = ((bmr * 1.375) + (bmr *  0.15))
+      return cpd.toFixed(2)
+    } 
+    else if (this.state.activityLevel === "moderate") {
+      let cpd = ((bmr * 1.55) +  (bmr *  0.15))
+      return cpd.toFixed(2)
+    }
+
+    else if (this.state.activityLevel === "very") {
+      let cpd = ((bmr * 1.725) +  (bmr *  0.15))
+      return cpd.toFixed(2)
+    }
+    else if (this.state.activityLevel === "extra") {
+      let cpd = ((bmr * 1.9) +  (bmr *  0.15))
+      return cpd.toFixed(2)
+    }
+  }
+
+  }
+}
+
   render() {
 
     let bmi = this.calculateBMI();
     let results = this.getBMIResults(bmi);
+    let bmr = this.getBMR();
+    let cpd = this.getCalPerDay(bmr);
+  
+
 
     return (
       <div className="BMI container">
         <div className="row">
           <div className="col-xs-12">
             <h1>BMI Calculator</h1>
-            <p>Enter your weight and height below.</p>
+            <p>Enter your information below.</p>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-6">
             <form>
               <div className="form-group">
-                <legend>Weight</legend>
+                <legend>Current Weight</legend>
                 <div className="row">
                   <div className="col-xs-12">
                     <input className="form-control" id="bmiWeight" type="number" min="1" max="1000" value={this.state.weight} onChange={this.handleWeightChange} />
@@ -125,15 +251,71 @@ export default class BMI extends React.Component {
                   </div>
                 </div>
               </div>
+
+              <div className="form-group">
+                <legend>Activity Level</legend>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <select value={this.state.activityLevel} onChange={this.handleActivityLevelChange}>
+                      <option default>Select Your Activity Level</option>
+                      <option name="little" value="little">Little/no exercise</option>
+                      <option name="light" value="light">Light exercise</option>
+                      <option name="moderate" value="moderate">Moderate exercise (3-5days/week)</option>
+                      <option name="very" value="very">Very active (6-7 days/week)</option>
+                      <option name="extra" value="extra">Extra active (very active and physical job)</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div className="form-group">
+                  <legend>Gender</legend>
+                  <div className="row">
+                    <div className="col-xs-6">
+                      <select value={this.state.gender} onChange={this.handleGenderChange}>
+                        <option default>Select Your Gender</option>
+                        <option name="male"> Male</option>
+                        <option name="female">Female</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <legend> Age</legend>
+                  <div className="row">
+                    <div className="col-xs-6">
+                      <input className="form-control" id="age" type="number" min="1" max="1000" value={this.state.age} onChange={this.handleAgeChange} />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <legend>Weight Goal</legend>
+                  <div className="row">
+                    <div className="col-xs-12">
+                      <select value={this.state.goalWeight} onChange={this.handleGoalWeightChange} >
+                      <option default>Select Your Weight Goal</option>
+                        <option name="gain" value="gain"> Maintain/Gain Weight</option>
+                        <option name="lose" value="lose">Lose Weight</option>
+                    </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </form>
           </div>
 
           <div className="col-sm-6">
-            <BmiDisplay bmi={bmi} label={results.label} alertClass={results.alertClass} />
+            <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
           </div>
 
         </div>
       </div>
+
+
     );
   }
 }
@@ -142,12 +324,16 @@ function BmiDisplay(props) {
   return (
     <div>
       <div className={"bmi-result alert " + props.alertClass}>
-        <div>{props.bmi || '--.-'}</div>
+        <div> BMI Results: {" ", props.bmi || '--.-'}</div>
         <div>{props.label}</div>
+        <div>BMR Resluts: {props.bmr} </div>
+      <div>Suggested Calories Per Day: {props.cpd}</div>
       </div>
-      <Link to={"/ActivityLevel"} >Continue to activity level</Link>
     </div>
   )
+
 }
+
+
 
 
