@@ -12,12 +12,12 @@ function Signin() {
               <h1 className="lead brand">
                   NutriVice
               </h1>
-              <p className="display-4 quotes">
+              <div className="display-4 quotes">
               <h3> Famous quote</h3>
-              “Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”
-                <h4> – Horace</h4>
-               </p>
-               
+              <h4>“Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”</h4>
+                <h6> – Horace</h6>
+               </div>
+              
                {/* user signin form */}
               <form className="signin">
             <div className="mb-3">

@@ -30,11 +30,11 @@ function Signup() {
               <h1 className="lead brand">
                   NutriVice
               </h1>
-              <p className="display-4 quotes">
+              <div className="display-4 quotes">
               <h3> Famous quote</h3>
               <h4> “Health requires healthy food.”</h4>
                 <h6> – Roger Williams</h6>
-               </p>
+               </div>
                
                {/* user signin form */}
               <form className="signup">
