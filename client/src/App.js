@@ -8,6 +8,7 @@ import DietPref from "./components/Spoonacular/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/LandingPage";
 import Nav from "./components/Nav";
+import ActivityLevel from "./components/Spoonacular/ActivityLevel"
 
 
 
@@ -21,7 +22,6 @@ function App() {
         <Route exact path="/" component={LandingPage}/>
         <Route exact path="/bmi" component={BMI} />
         <Route exact path="/ActivityLevel" component={ActivityLevel} />
-
         <Route exact path="/DietPref" component={DietPref} />
         <Route exact path="/MealPlan" component={Spoonacular} />
         <Route exact path="/Chart" component={Chart} />
