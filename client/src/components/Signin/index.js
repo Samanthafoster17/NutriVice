@@ -28,7 +28,7 @@ function Signin() {
                <label for="signinpassword" className="form-label">Password</label>
                <input type="password" className="form-control" aria-describedby="emailhelp" onChange={(e) => setLoginPassword(e.target.value)}  />
             </div>
-            <button type="submit" class="btn btn-primary" >Signin</button>
+            <button type="submit" className="btn btn-primary" >Signin</button>
             <div id="emailHelp" className="form-text">Don't have an account yet? <hr />
              <button className="btn btn-success " href="/signup"> Signup </button>
             </div>

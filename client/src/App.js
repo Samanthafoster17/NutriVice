@@ -6,15 +6,14 @@ import BMI from "./components/Spoonacular/BMI";
 import Spoonacular from './components/Spoonacular';
 import ActivityLevel from "./components/Spoonacular/ActivityLevel";
 import DietPref from "./components/Spoonacular/DietPref";
-import Chart from "./components/Chart/";
+import Chart from "./components/Chart";
 import LandingPage from "./pages/LandingPage";
 import Nav from "./components/Nav";
 
 
+
 function App() {
 
-  // return <Signup />
-  // return <SearchResultContainer />;
   return (
     <Router>
       <div className="APP">

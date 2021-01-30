@@ -58,7 +58,7 @@ function Signup() {
                <label for="signinpassword" className="form-label">Password</label>
                <input type="password" className="form-control"  onChange={(e) => setRegisterPassword(e.target.value)} />
             </div>
-            <button type="submit" class="btn btn-primary" onClick={register} >Register</button>
+            <button type="submit" className="btn btn-primary" onClick={register} >Register</button>
             <div id="emailHelp" className="form-text">Already have an Account? <hr />
              <button className="btn btn-success " href="/signin" > Signin </button>
             </div>
