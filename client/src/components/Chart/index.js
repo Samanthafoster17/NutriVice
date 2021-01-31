@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
+import { Button } from '../Button';
+
 
 
 export default class Chart extends Component {
@@ -29,17 +31,42 @@ export default class Chart extends Component {
                 ]
             }
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleChange(event) {
+        event.preventDefault();
+        this.setState({value: event.target.value});
+    }
+    handleSubmit(event) {
+        event.preventDefault();
+    }
+
+   
 
     getChartData = canvas => {
         const data = this.state.data;
         return data
     }
 
+     addData(chart) {
+        chart.data.labels.push(this.state.label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(this.state.data);
+        });
+        chart.update();
+    }
+
     render() {
         return (
             <div style={{ position: "relative" }}>
                 <h3>Progress</h3>
+                <form>
+                <input  className="form-control" value={this.state.data.datasets.data} placeholder="Weight" />
+                <input  className="form-control" value={this.state.labels} placeholder="Day" />
+                <Button  onClick={this.handleChange}/>
+                </form>
                 <Line
                     options={{
                         title:{
