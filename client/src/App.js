@@ -8,7 +8,7 @@ import DietPref from "./components/Spoonacular/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/LandingPage";
 import Nav from "./components/Nav";
-import ActivityLevel from "./components/Spoonacular/ActivityLevel"
+import ActivityLevel from "./components/Spoonacular/ActivityLevel";
 
 
 

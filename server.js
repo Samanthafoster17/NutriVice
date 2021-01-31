@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require('passport');
 const app = express();
 const secretOrKey = "secret";
-const routes = require("./routes/api/user-route");
-const path = require("path");
+const cors =require("cors");
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -22,20 +21,19 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nutrivicedb",
 .then(() => console.log("Successful connection to mongoDB"))
 .catch( err => console.log(err));
 
+
+if(process.env.NODE_ENV !== "production"){
+  app.options("*", cors());
+  app.use(cors());
+} 
+
 app.use(express.json());
 
 app.use(passport.initialize());
 
-app.use(routes);
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-
-
 require('./config/passport')(passport);
 
-app.use('./api/users', require('./routes/api/user-route'));
+app.use('/api/users', require('./routes/api/user-route'));
 
 app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

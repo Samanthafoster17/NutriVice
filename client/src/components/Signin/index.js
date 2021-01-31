@@ -1,46 +1,91 @@
-import React, { useState } from 'react';
+import React, { Component} from 'react';
+import {Link } from 'react-router-dom';
 import './style.css';
-import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
-function Signin() {
-   const [loginPassword, setLoginPassword] = useState("");
-   const [loginEmail, setLoginEmail] = useState("");
+class Signin extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: "",
+      errors: {}
+    };
+  }
 
-    return (
-      <div className="container-fluid main">
-          <div className="container-fluid">
-              <h1 className="lead brand">
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+
+  const userInfo = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(userInfo);
+
+      axios.post('http://localhost:5000/api/users/login', userInfo)
+      .then(res => {
+        console.log(res);
+        localStorage.setItem('token', res.userInfo.token);
+      })
+      .catch(err => {
+       console.log(err);
+      })
+  };
+
+    render() {
+      const { errors } = this.state;
+      return (
+        <div className="container-fluid main">
+            <div className="container-fluid">
+            <h1 className="lead brand">
                   NutriVice
               </h1>
-              <div className="display-4 quotes">
-              <h3> Famous quote</h3>
-              <h4>“Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”</h4>
-                <h6> – Horace</h6>
-               </div>
-              
-               {/* user signin form */}
-              <form className="signin">
-            <div className="mb-3">
-               <label for="signinemail" className="form-label">Email</label>
-               <input type="email" className="form-control" aria-describedby="emailhelp" onChange={(e) => setLoginEmail(e.target.value)}  />
+                <p className="display-4 quotes">
+                  <h3 className="quotes"> Famous quote</h3>
+              <h4 className=" quotes"> “Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”</h4>
+                <h6 className=" quotes">– Horace</h6>
+                 </p>
+                 
+                 {/* user signin form */}
+                <form className="signin" noValidate onSubmit={this.onSubmit}>
+              <div className="mb-3">
+                 <label htmlFor="email" className="form-label">Email</label>
+                 <input type="email" className="form-control" aria-describedby="emailhelp" 
+                 onChange={this.onChange}
+                 value={this.state.email}
+                 error={errors.email}
+                 id="email"
+                 type="email"
+                 />
+              </div>
+              <div className="mb-3">
+                 <label htmlFor="password" className="form-label">Password</label>
+                 <input type="password" className="form-control" aria-describedby="emailhelp"
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                 />
+              </div>
+              <button type="submit"  class="btn btn-primary">Signin</button>
+              <p className="grey-text text-darken-1">
+                Don't have an account? <a href="/register">Register</a>
+              </p>
+            </form>
+            {/* sales texts */}
             </div>
-            <div className="mb-3">
-               <label for="signinpassword" className="form-label">Password</label>
-               <input type="password" className="form-control" aria-describedby="emailhelp" onChange={(e) => setLoginPassword(e.target.value)}  />
-            </div>
-            <button type="submit" className="btn btn-primary" >Signin</button>
-            <div id="emailHelp" className="form-text">Don't have an account yet? <hr />
-             <button className="btn btn-success " href="/signup"> Signup </button>
-            </div>
-          </form>
-          {/* sales texts */}
-          </div>
-           <div>
-          
-           </div>
-
-      </div>
-    )
+             <div>
+            
+             </div>
+  
+        </div>
+      )
+    }
 }
 
 export default Signin;
