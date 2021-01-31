@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { Component} from 'react';
 import './style.css';
-// import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class  Signup extends Component{
    constructor() {
