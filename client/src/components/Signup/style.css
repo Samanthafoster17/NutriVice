@@ -26,3 +26,9 @@
     padding-bottom: 0px !important;
 
 }
+
+@media (max-width: 450px){
+    .signup {
+        width: 100%;
+    }
+}

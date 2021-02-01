@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import {Link } from 'react-router-dom';
 import './style.css';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class Signin extends Component {
