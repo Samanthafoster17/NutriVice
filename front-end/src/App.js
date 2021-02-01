@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import Navbar from "./components/Navbar";
 // import LandingPage from "./pages/LandingPage";
 
-// import Calendar from "./components/calendar/Calendar";
+import Calendar from "./components/calendar/Calendar";
 
 import Circle from "./components/circleprogressbars/Circle"
 
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
