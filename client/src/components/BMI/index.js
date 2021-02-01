@@ -305,8 +305,7 @@ export default class BMI extends React.Component {
                       </select>
                     </div>
                   </div>
-                  <br />
-                  <p>Please verify all information is corrrect for accuracy</p>
+
                 </div>
               </div>
             </form>
@@ -315,8 +314,12 @@ export default class BMI extends React.Component {
           <div className="col-sm-6">
             <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
           </div>
-          <button id="filterBtnThree" className="btn btn-default filter-button">
-            <Link to={"/DietPref"}>Continue</Link></button>
+          <div>
+            <br />
+            <p>Please verify all information is corrrect for accuracy</p>
+            <button id="filterBtnThree" className="btn btn-default filter-button">
+              <Link to={"/DietPref"}>Continue</Link></button>
+          </div>
         </div>
       </div>
 
@@ -327,19 +330,21 @@ export default class BMI extends React.Component {
 
 function BmiDisplay(props) {
   return (
+
     <div>
       <div className={"bmi-result alert " + props.alertClass}>
-        <div> BMI Results: {" ", props.bmi || '--.-'}</div>
+        <div> BMI Results: {props.bmi || '--.-'}</div>
         <div>{props.label}</div>
         <div>BMR Resluts: {props.bmr} </div>
         <div>Suggested Calories Per Day: {props.cpd}</div>
       </div>
-
-      <p><strong>What is Basal Metabolic Rate (BMR)?</strong> <br />
+      <div>
+        <p><strong>What is Basal Metabolic Rate (BMR)?</strong> <br />
 The Basal Metabolic Rate (BMR) estimates not just the amount of calories you burn off when inactive,
 but also the daily calorie number which accounts for your lifestyle activity level. Providing you representation for your everyday calorie consumption. </p>
 
-      <img src={BmiChart} alt="BMI chart" />
+        <img src={BmiChart} alt="BMI chart" />
+      </div>
     </div>
 
   )
