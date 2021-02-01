@@ -1,0 +1,21 @@
+.BMI{
+ font-size: 22px;
+ margin-bottom: 80px;
+ background-color:#D8F3DC;
+ padding: 45px;
+}
+
+img{
+    width: 450px;
+    max-width: fill;
+}
+
+label{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+select{
+    width: 275px;;
+}
