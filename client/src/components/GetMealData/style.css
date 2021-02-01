@@ -1,0 +1,131 @@
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #42B32F;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+#filterBtn, #filterBtnTwo,  #filterBtnThree
+{
+    font-size: 18px ;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #42B32F;
+    margin-bottom: 30px;
+
+}
+#filterBtn:hover, #filterBtnTwo:hover,  #filterBtnThree:hover
+{
+    font-size: 18px;
+    border: 1px solid #42B32F;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #42B32F;
+
+}
+
+#filterBtnTwo {
+ float: left;
+ margin-right: 25%;
+}
+
+#filterBtnThree {
+    margin: 15px;
+}
+
+.btn-default:active .filter-button:active
+{
+    background-color: #42B32F;
+    color: white;
+}
+
+.port-image
+{
+    width: 100%;
+}
+
+.gallery_product
+{
+    margin-bottom: 20px;
+    background-color:#D8F3DC; 
+}
+
+.getMeals {
+    padding: 50px;
+    text-align: center;
+    font-size: 18px;
+    background-color:#ade4b5;
+}
+
+
+
+input {
+    height: 30px;
+    padding: 15px;
+}
+
+label {
+padding: 13px;
+margin-left: 8px;
+font-size: 13px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+img {
+    padding: 5px;
+    vertical-align: middle;
+    height: 350px;
+}
+
+.btn-success {
+    font-size: 22px;
+
+}
+
+
+article li {
+    margin-right: 25%;
+}
+
+.nutrient li {
+    margin-right: 2%;
+}
+
+article h1 {
+    margin-right: 20%;
+}
+
+#filterBtnThree a {
+    color:black
+}
+
+main a {
+    color: darkgreen;
+}
+
+body {
+    background-color: #D8F3DC;
+    
+}
+
+html{
+    background-color: #D8F3DC;
+}
+
+

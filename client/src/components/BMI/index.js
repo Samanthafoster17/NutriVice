@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+// import Spoonacular from ".";
+import "./style.css";
+import BmiChart from "../images/1848503788-huge.jpg";
 
 export default class BMI extends React.Component {
 
@@ -123,9 +127,9 @@ export default class BMI extends React.Component {
       let INCHES_IN_FEET = 12;
 
       var height = Number(this.state.heightFeet);
-     
+
       height *= INCHES_IN_FEET;
-    
+
       height += Number(this.state.heightInch);
 
       if (this.state.gender === "Male") {
@@ -137,7 +141,7 @@ export default class BMI extends React.Component {
 
       else if (this.state.gender === "Female") {
         let bmr = 655.51 + (4.35 * this.state.weight) + (4.7 * height) - (4 - 7 * this.state.age);
-       
+
         return bmr.toFixed(2)
 
       }
@@ -149,64 +153,64 @@ export default class BMI extends React.Component {
   }
 
   getCalPerDay(bmr) {
-   
+
     if (this.state.activityLevel && this.state.weight && this.state.heightFeet && this.state.heightInch && this.state.age && this.state.goalWeight) {
 
-     if (this.state.goalWeight === "lose") {
-    
+      if (this.state.goalWeight === "lose") {
 
-      if(this.state.activityLevel === "little") {
-       let cpd = (bmr * 1.2);
-         console.log("cpd")
-        return cpd.toFixed(2)
-      } 
-      else if (this.state.activityLevel === "light") {
-        let cpd = (bmr * 1.375)
-        return cpd.toFixed(2)
-      } 
-      else if (this.state.activityLevel === "moderate") {
-        let cpd = (bmr * 1.55)
-        return cpd.toFixed(2)
+
+        if (this.state.activityLevel === "little") {
+          let cpd = (bmr * 1.2);
+          console.log("cpd")
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "light") {
+          let cpd = (bmr * 1.375)
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "moderate") {
+          let cpd = (bmr * 1.55)
+          return cpd.toFixed(2)
+        }
+
+        else if (this.state.activityLevel === "very") {
+          let cpd = (bmr * 1.725)
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "extra") {
+          let cpd = (bmr * 1.9)
+          return cpd.toFixed(2)
+        }
       }
 
-      else if (this.state.activityLevel === "very") {
-        let cpd = (bmr * 1.725)
-        return cpd.toFixed(2)
-      }
-      else if (this.state.activityLevel === "extra") {
-        let cpd = (bmr * 1.9)
-        return cpd.toFixed(2)
-      }
-     } 
-  
-    else  {
-    if (this.state.activityLevel === "little") {
-  
-     let cpd = ((bmr * 1.2) + (bmr * 0.15));
-     
-      return cpd.toFixed(2)
-    } 
-    else if (this.state.activityLevel === "light") {
-      let cpd = ((bmr * 1.375) + (bmr *  0.15))
-      return cpd.toFixed(2)
-    } 
-    else if (this.state.activityLevel === "moderate") {
-      let cpd = ((bmr * 1.55) +  (bmr *  0.15))
-      return cpd.toFixed(2)
-    }
+      else {
+        if (this.state.activityLevel === "little") {
 
-    else if (this.state.activityLevel === "very") {
-      let cpd = ((bmr * 1.725) +  (bmr *  0.15))
-      return cpd.toFixed(2)
-    }
-    else if (this.state.activityLevel === "extra") {
-      let cpd = ((bmr * 1.9) +  (bmr *  0.15))
-      return cpd.toFixed(2)
+          let cpd = ((bmr * 1.2) + (bmr * 0.15));
+
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "light") {
+          let cpd = ((bmr * 1.375) + (bmr * 0.15))
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "moderate") {
+          let cpd = ((bmr * 1.55) + (bmr * 0.15))
+          return cpd.toFixed(2)
+        }
+
+        else if (this.state.activityLevel === "very") {
+          let cpd = ((bmr * 1.725) + (bmr * 0.15))
+          return cpd.toFixed(2)
+        }
+        else if (this.state.activityLevel === "extra") {
+          let cpd = ((bmr * 1.9) + (bmr * 0.15))
+          return cpd.toFixed(2)
+        }
+      }
+
     }
   }
-
-  }
-}
 
   render() {
 
@@ -214,14 +218,14 @@ export default class BMI extends React.Component {
     let results = this.getBMIResults(bmi);
     let bmr = this.getBMR();
     let cpd = this.getCalPerDay(bmr);
-  
+
 
 
     return (
       <div className="BMI container">
         <div className="row">
           <div className="col-xs-12">
-            <h1>BMI Calculator</h1>
+            <h1>Your Journey Begins Here!</h1>
             <p>Enter your information below.</p>
           </div>
         </div>
@@ -295,23 +299,24 @@ export default class BMI extends React.Component {
                   <div className="row">
                     <div className="col-xs-12">
                       <select value={this.state.goalWeight} onChange={this.handleGoalWeightChange} >
-                      <option default>Select Your Weight Goal</option>
+                        <option default>Select Your Weight Goal</option>
                         <option name="gain" value="gain"> Maintain/Gain Weight</option>
                         <option name="lose" value="lose">Lose Weight</option>
-                    </select>
+                      </select>
                     </div>
                   </div>
+                  <br />
+                  <p>Please verify all information is corrrect for accuracy</p>
                 </div>
               </div>
-
-
             </form>
           </div>
 
           <div className="col-sm-6">
             <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
           </div>
-
+          <button id="filterBtnThree" className="btn btn-default filter-button">
+            <Link to={"/DietPref"}>Continue</Link></button>
         </div>
       </div>
 
@@ -327,9 +332,16 @@ function BmiDisplay(props) {
         <div> BMI Results: {" ", props.bmi || '--.-'}</div>
         <div>{props.label}</div>
         <div>BMR Resluts: {props.bmr} </div>
-      <div>Suggested Calories Per Day: {props.cpd}</div>
+        <div>Suggested Calories Per Day: {props.cpd}</div>
       </div>
+
+      <p><strong>What is Basal Metabolic Rate (BMR)?</strong> <br />
+The Basal Metabolic Rate (BMR) estimates not just the amount of calories you burn off when inactive,
+but also the daily calorie number which accounts for your lifestyle activity level. Providing you representation for your everyday calorie consumption. </p>
+
+      <img src={BmiChart} alt="BMI chart" />
     </div>
+
   )
 
 }
