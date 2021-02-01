@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Signup from './components/Signup';
 import Signin from './components/Signin';
-import './App.css';
+// import './App.css';
 import BMI from "./components/BMI";
 import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
