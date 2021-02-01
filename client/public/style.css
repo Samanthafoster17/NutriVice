@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .APP{
     background-color: #2D6A4F;
 }

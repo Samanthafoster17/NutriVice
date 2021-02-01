@@ -48,6 +48,8 @@ export default class DietPref extends Component {
       <div className="form-check">
         <header className="header">
           <h1>Choose Diet Preferences</h1>
+          <small>
+         *descriptions provided by Spoonacular.</small>
         </header>
 
         <main>
