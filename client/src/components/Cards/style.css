@@ -4,7 +4,7 @@
   }
   
   .cards__items {
-    /* margin: 20px 0; */
+    margin: 0 0;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
