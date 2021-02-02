@@ -7,7 +7,7 @@
 
 img{
     width: 450px;
-    max-width: fill;
+    max-width: stretch;
 }
 
 label{
