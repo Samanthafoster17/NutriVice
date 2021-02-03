@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import GetMeal from '../GetMealData';
 import "./style.css";
@@ -38,6 +38,16 @@ export default class DietPref extends Component {
     });
 
   };
+
+  savePreferences (preferences) {
+    const newPref = {
+      preferences: preferences };
+    console.log(newPref);
+
+    axios.post('http://localhost:5000/api/users/dataPref', newPref)
+    .then(res => console.log(res))
+  } 
+
 
   render() {
     const preferences = Object.keys(this.state.preferences)
@@ -120,6 +130,7 @@ export default class DietPref extends Component {
           <p> Your selected preferences are: {preferences}</p>
           <p>Please verify your preferences are correct, then scroll down to get your daily meal plan!
                </p>
+               <button onClick={this.savePreferences(preferences)}>Save</button>
           <br />
 
           <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>

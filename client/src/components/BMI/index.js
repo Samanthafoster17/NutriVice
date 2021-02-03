@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Spoonacular from ".";
+import axios from "axios";
 import "./style.css";
 import BmiChart from "../images/1848503788-huge.jpg";
 
@@ -212,6 +212,22 @@ export default class BMI extends React.Component {
     }
   }
 
+  saveData() {
+    let bmr = this.getBMR();
+    if(this.getCalPerDay(bmr)) {
+      const newData = {
+        weight: this.state.weight,
+            bmi: this.calculateBMI(),
+            bmr: this.getBMR(),
+            cpd: this.getCalPerDay(bmr)
+      };
+      console.log(newData);
+  
+      axios.post('http://localhost:5000/api/users/data', newData)
+      .then(res => console.log(res))
+    }
+  }
+
   render() {
 
     let bmi = this.calculateBMI();
@@ -317,6 +333,7 @@ export default class BMI extends React.Component {
           <div>
             <br />
             <p>Please verify all information is corrrect for accuracy</p>
+            <button onClick={this.saveData()}>Save</button>
             <button id="filterBtnThree" className="btn btn-default filter-button">
               <Link to={"/DietPref"}>Continue</Link></button>
           </div>

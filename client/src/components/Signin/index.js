@@ -74,7 +74,7 @@ class Signin extends Component {
                   type="password"
                  />
               </div>
-              <button type="submit"  class="btn btn-primary">Signin</button>
+              <button type="submit"  className="btn btn-primary">Signin</button>
               <p className="grey-text text-darken-1">
                 Don't have an account? <a href="/register">Register</a>
               </p>

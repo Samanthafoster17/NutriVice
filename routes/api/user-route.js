@@ -5,6 +5,8 @@ const validateRegisterInput = require("../../auth/register");
 const validateLoginInput = require("../../auth/login");
 const User = require("../../models/User");
 const secretOrKey = "secret";
+const Data = require("../../models/userData");
+const Pref = require("../../models/Pref")
 
 // signup route to register new user
 router.post("/register", (req, res) => {
@@ -84,5 +86,30 @@ router.post("/login", (req, res) => {
       });
     });
   });
+
+  router.post('/data', (req, res) => {
+    const newData = new Data({
+      // userId: req.user._id,
+      weight: req.body.weight,    
+      bmi: req.body.bmi,
+      bmr: req.body.bmr,
+      cpd: req.body.cpd
+  
+    })
+    newData
+    .save()
+    .then(Data => res.json(Data))
+    .catch(err => console.log(err));
+  })
+  
+  router.post('/dataPref', (req, res) => {
+    const newPref = new Pref({
+      preferences: req.body.preferences
+    })
+    newPref
+    .save()
+    .then(Pref => res.json(Pref) )
+  })
+  
 
   module.exports = router;
