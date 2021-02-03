@@ -41,20 +41,23 @@ class Signin extends Component {
     render() {
       const { errors } = this.state;
       return (
-        <div className="container-fluid main">
-            <div className="container-fluid">
-            <h1 className="lead brand">
-                  NutriVice
+        <div className="main">
+            <div className="pillar">
+              <h1 className="lead brand">
+                  Nutri<span className = "highlight">Vice</span>
               </h1>
+              <div className = "quote">
                 <p className="display-4 quotes">
-                  <h3 className="quotes"> Famous quote</h3>
-              <h4 className=" quotes"> “Healthy eating is a way of life, so it’s important to establish <br />routines that are simple, realistically, and ultimately livable.”</h4>
-                <h6 className=" quotes">– Horace</h6>
-                 </p>
+                  {/* <h3 className="quotes"> Famous quote</h3> */}
+                  <h4 className="quotes"> “Healthy eating is a way of life, so it’s important to establish routines that are simple, realistically, and ultimately livable.”</h4>
+                  <h6 className="quotes">– Horace</h6>
+                </p>
+              </div>
                  
-                 {/* user signin form */}
-                <form className="signin" noValidate onSubmit={this.onSubmit}>
-              <div className="mb-3">
+              {/* user signin form */}
+              <form className="signin" noValidate onSubmit={this.onSubmit}>
+              <div className="mb-3
+              ">
                  <label htmlFor="email" className="form-label">Email</label>
                  <input type="email" className="form-control" aria-describedby="emailhelp" 
                  onChange={this.onChange}
@@ -75,7 +78,7 @@ class Signin extends Component {
                  />
               </div>
               <button type="submit"  className="btn btn-primary">Signin</button>
-              <p className="grey-text text-darken-1">
+              <p className="register grey-text text-darken-1">
                 Don't have an account? <a href="/register">Register</a>
               </p>
             </form>
