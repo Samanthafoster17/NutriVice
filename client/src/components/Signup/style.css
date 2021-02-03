@@ -19,13 +19,6 @@
     padding: 10px;
     background-color: #d8f3dc;
 }
-.main{
-    background-color: #95d5b2 !important;
-    height: 100vh;
-    margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-
-}
 
 @media (max-width: 450px){
     .signup {

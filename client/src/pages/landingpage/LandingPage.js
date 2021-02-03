@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Jumbotron from "../components/Jumbotron";
-import Footer from "../components/Footer"
+import Jumbotron from "../../components/Jumbotron";
+import Footer from "../../components/Footer"
 
-// import "./LandingPage.css";
-import Cards from '../components/Cards';
-import CardItem from "../components/CardItem";
+import Cards from '../../components/Cards';
+import CardItem from "../../components/CardItem";
 
 function LandingPage() {
     return (

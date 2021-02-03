@@ -6,7 +6,7 @@ import BMI from "./components/BMI";
 import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
 
 
