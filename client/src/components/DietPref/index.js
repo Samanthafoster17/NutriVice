@@ -20,10 +20,10 @@ export default class DietPref extends Component {
         LactoVegetarian: false,
         OvoVegetarian: false,
         Pescetarian: false,
-
-
-
       },
+      save: {
+        clicked: false
+      }
     };
   }
 
@@ -39,14 +39,29 @@ export default class DietPref extends Component {
 
   };
 
+  handleSave = (event) => {
+    const {name, checked } = event.target;
+
+    this.setState((prevState) => {
+      let save = prevState.save;
+      save[name] = checked;
+      return save;
+
+    });
+    
+  };
+
   savePreferences (preferences) {
+    if(this.state.save.clicked === true) {
     const newPref = {
       preferences: preferences };
     console.log(newPref);
 
     axios.post('http://localhost:5000/api/users/dataPref', newPref)
     .then(res => console.log(res))
+    .then(alert("Your preferences have been saved! you may continue"))
   } 
+}
 
 
   render() {
@@ -130,7 +145,8 @@ export default class DietPref extends Component {
           <p> Your selected preferences are: {preferences}</p>
           <p>Please verify your preferences are correct, then scroll down to get your daily meal plan!
                </p>
-               <button onClick={this.savePreferences(preferences)}>Save</button>
+               <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.savePreferences(preferences)} type="checkbox" name="clicked" />
+               <label className="form-check-label">Save</label>
           <br />
 
           <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>
