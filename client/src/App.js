@@ -8,6 +8,7 @@ import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
+import Dashboard from "./pages/UserDash"
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/Chart" component={Chart} />
         <Route exact path="/Signup" component={Signup}/>
         <Route exact path="/Signin" component={Signin}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
         </Switch>
       </div>
     </Router>

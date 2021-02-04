@@ -32,10 +32,13 @@ class Signin extends Component {
       .then(res => {
         console.log(res);
         localStorage.setItem('token', res.userInfo.token);
+
+        
       })
       .catch(err => {
        console.log(err);
       })
+      this.props.history.push('/dashboard');
   };
 
     render() {
