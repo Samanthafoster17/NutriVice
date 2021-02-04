@@ -238,105 +238,107 @@ export default class BMI extends React.Component {
 
 
     return (
-      <div className="BMI container">
-        <div className="row">
-          <div className="col-xs-12">
-            <h1>Your Journey Begins Here!</h1>
-            <p>Enter your information below.</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <form>
-              <div className="form-group">
-                <legend>Current Weight</legend>
-                <div className="row">
-                  <div className="col-xs-12">
-                    <input className="form-control" id="bmiWeight" type="number" min="1" max="1000" value={this.state.weight} onChange={this.handleWeightChange} />
-                    <label className="control-label" htmlFor="bmiWeight">lb</label>
-                  </div>
-                </div>
+      <div className="BMI">
+        <div className = "container">
+          <div className="row">
+              <div className="col-xs-12">
+                <h1>Your Journey Begins Here!</h1>
+                <p>Enter your information below.</p>
               </div>
-
-              <div className="form-group">
-                <legend>Height</legend>
-                <div className="row">
-                  <div className="col-xs-6">
-                    <input className="form-control" id="bmiHeightFeet" type="number" min="1" max="12" value={this.state.heightFeet} onChange={this.handleHeightFeetChange} />
-                    <label className="control-label" htmlFor="bmiHeightFeet">ft</label>
-                  </div>
-                  <div className="col-xs-6">
-                    <input className="form-control" id="bmiHeightInch" type="number" min="0" max="12" value={this.state.heightInch} onChange={this.handleHeightInchChange} />
-                    <label className="control-label" htmlFor="bmiHeightInch">in</label>
-                  </div>
-                </div>
-              </div>
-
-              <div className="form-group">
-                <legend>Activity Level</legend>
-                <div className="row">
-                  <div className="col-xs-12">
-                    <select value={this.state.activityLevel} onChange={this.handleActivityLevelChange}>
-                      <option default>Select Your Activity Level</option>
-                      <option name="little" value="little">Little/no exercise</option>
-                      <option name="light" value="light">Light exercise</option>
-                      <option name="moderate" value="moderate">Moderate exercise (3-5days/week)</option>
-                      <option name="very" value="very">Very active (6-7 days/week)</option>
-                      <option name="extra" value="extra">Extra active (very active and physical job)</option>
-                    </select>
-                  </div>
-                </div>
-
-
-                <div className="form-group">
-                  <legend>Gender</legend>
-                  <div className="row">
-                    <div className="col-xs-6">
-                      <select value={this.state.gender} onChange={this.handleGenderChange}>
-                        <option default>Select Your Gender</option>
-                        <option name="male"> Male</option>
-                        <option name="female">Female</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <legend> Age</legend>
-                  <div className="row">
-                    <div className="col-xs-6">
-                      <input className="form-control" id="age" type="number" min="1" max="1000" value={this.state.age} onChange={this.handleAgeChange} />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <legend>Weight Goal</legend>
-                  <div className="row">
-                    <div className="col-xs-12">
-                      <select value={this.state.goalWeight} onChange={this.handleGoalWeightChange} >
-                        <option default>Select Your Weight Goal</option>
-                        <option name="gain" value="gain"> Maintain/Gain Weight</option>
-                        <option name="lose" value="lose">Lose Weight</option>
-                      </select>
+            </div>
+            <div className="row">
+              <div className="col-sm-6">
+                <form>
+                  <div className="form-group">
+                    <legend>Current Weight</legend>
+                    <div className="row">
+                      <div className="col-xs-12">
+                        <input className="form-control" id="bmiWeight" type="number" min="1" max="1000" value={this.state.weight} onChange={this.handleWeightChange} />
+                        <label className="control-label" htmlFor="bmiWeight">lb</label>
+                      </div>
                     </div>
                   </div>
 
-                </div>
-              </div>
-            </form>
-          </div>
+                  <div className="form-group">
+                    <legend>Height</legend>
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <input className="form-control" id="bmiHeightFeet" type="number" min="1" max="12" value={this.state.heightFeet} onChange={this.handleHeightFeetChange} />
+                        <label className="control-label" htmlFor="bmiHeightFeet">ft</label>
+                      </div>
+                      <div className="col-xs-6">
+                        <input className="form-control" id="bmiHeightInch" type="number" min="0" max="12" value={this.state.heightInch} onChange={this.handleHeightInchChange} />
+                        <label className="control-label" htmlFor="bmiHeightInch">in</label>
+                      </div>
+                    </div>
+                  </div>
 
-          <div className="col-sm-6">
-            <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
-          </div>
-          <div>
-            <br />
-            <p>Please verify all information is corrrect for accuracy</p>
-            <button onClick={this.saveData()}>Save</button>
-            <button id="filterBtnThree" className="btn btn-default filter-button">
-              <Link to={"/DietPref"}>Continue</Link></button>
-          </div>
+                  <div className="form-group">
+                    <legend>Activity Level</legend>
+                    <div className="row">
+                      <div className="col-xs-12">
+                        <select value={this.state.activityLevel} onChange={this.handleActivityLevelChange}>
+                          <option default>Select Your Activity Level</option>
+                          <option name="little" value="little">Little/no exercise</option>
+                          <option name="light" value="light">Light exercise</option>
+                          <option name="moderate" value="moderate">Moderate exercise (3-5days/week)</option>
+                          <option name="very" value="very">Very active (6-7 days/week)</option>
+                          <option name="extra" value="extra">Extra active (very active and physical job)</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div className="form-group">
+                      <legend>Gender</legend>
+                      <div className="row">
+                        <div className="col-xs-6">
+                          <select value={this.state.gender} onChange={this.handleGenderChange}>
+                            <option default>Select Your Gender</option>
+                            <option name="male"> Male</option>
+                            <option name="female">Female</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <legend> Age</legend>
+                      <div className="row">
+                        <div className="col-xs-6">
+                          <input className="form-control" id="age" type="number" min="1" max="1000" value={this.state.age} onChange={this.handleAgeChange} />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <legend>Weight Goal</legend>
+                      <div className="row">
+                        <div className="col-xs-12">
+                          <select value={this.state.goalWeight} onChange={this.handleGoalWeightChange} >
+                            <option default>Select Your Weight Goal</option>
+                            <option name="gain" value="gain"> Maintain/Gain Weight</option>
+                            <option name="lose" value="lose">Lose Weight</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div className="col-sm-6">
+                <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
+              </div>
+              <div>
+                <br />
+                <p>Please verify all information is corrrect for accuracy</p>
+                <button onClick={this.saveData()}>Save</button>
+                <button id="filterBtnThree" className="btn btn-default filter-button">
+                  <Link to={"/DietPref"}>Continue</Link></button>
+              </div>
+            </div>
         </div>
       </div>
 
