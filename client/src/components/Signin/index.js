@@ -79,7 +79,7 @@ class Signin extends Component {
               </div>
               <button type="submit"  className="btn btn-primary">Signin</button>
               <p className="register grey-text text-darken-1">
-                Don't have an account? <a href="/register">Register</a>
+                Don't have an account? <a href="/signup">Register</a>
               </p>
             </form>
             {/* sales texts */}

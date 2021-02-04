@@ -67,7 +67,7 @@ class  Signup extends Component{
 render() {
    const { errors } = this.state;
    return (
-      <div className="container-fluid signup-container">
+      <div className="signup-container">
              <div className = "pillar">
                <h1 className="lead brand">
                   NutriVice
@@ -132,7 +132,7 @@ render() {
                </div>
                <button type="submit" className="btn btn-primary">Register</button>
                <p className="register grey-text text-darken-1">
-                  Don't have an account? <a href="/login">Login</a>
+                  Already have an account? <a href="/signin">Sign In</a>
                </p>
             </form>
             </div>

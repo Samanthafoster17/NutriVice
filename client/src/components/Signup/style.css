@@ -37,8 +37,12 @@
     align-self: center;
 }
 
-@media (max-width: 450px){
+@media (max-width: 620px){
+    .pillar {
+        width: 100%
+    }
+
     .signup {
-        width: 100%;
+        width: 48%;
     }
 }
