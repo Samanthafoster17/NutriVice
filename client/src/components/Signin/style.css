@@ -16,7 +16,7 @@
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #084343;
-    font-size: 60px !important;
+    font-size: 60px;
     font-weight: 300;
     margin: 0px;
     padding: 0px;
@@ -39,7 +39,7 @@
 }
 
 .pillar {
-    height: 100vh;
+    height: 100%;
     width: 600px;
     background-color: #d8f3dc;
     border: 1px solid black;
