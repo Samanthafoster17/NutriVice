@@ -38,7 +38,7 @@ class Signin extends Component {
       .catch(err => {
        console.log(err);
       })
-      this.props.history.push('/bmi');
+      this.props.history.push('/dashboard');
   };
 
     render() {
