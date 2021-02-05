@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import {Link } from 'react-router-dom';
 import './style.css';
 import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -11,6 +12,7 @@ class Signin extends Component {
     this.state = {
       email: "",
       password: "",
+      isAuthenticated: false,
       errors: {}
     };
   }
@@ -31,8 +33,20 @@ class Signin extends Component {
       axios.post('http://localhost:5000/api/users/login', userInfo)
       .then(res => {
         console.log(res);
-        localStorage.setItem('token', res.data.token);
+        const { token } = res.data;
+        
+        localStorage.setItem('jwtToken', token);
+        this.setState({isAuthenticated: true});
+        const decodedToken = jwt_decode(token);
+        console.log(decodedToken);
 
+        const setAuthToken = token => {
+           if(token) {
+            axios.defaults.headers.common["Authorization"] = token;
+           } else {
+            delete axios.defaults.headers.common["Authorization"];
+           }
+        };
         
       })
       .catch(err => {
