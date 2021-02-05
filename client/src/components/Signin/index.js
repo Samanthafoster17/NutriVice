@@ -31,14 +31,14 @@ class Signin extends Component {
       axios.post('http://localhost:5000/api/users/login', userInfo)
       .then(res => {
         console.log(res);
-        localStorage.setItem('token', res.userInfo.token);
+        localStorage.setItem('token', res.data.token);
 
         
       })
       .catch(err => {
        console.log(err);
       })
-      this.props.history.push('/dashboard');
+      this.props.history.push('/bmi');
   };
 
     render() {
