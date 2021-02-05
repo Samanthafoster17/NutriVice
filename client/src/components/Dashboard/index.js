@@ -21,7 +21,7 @@ const Dashboard = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-sm-2">
-                    <div id="header">
+                    <div id="header" className="sidebar">
                         <ProSidebar collapsed={menuCollapse}>
                         <SidebarHeader >
                             <div className="logo-text">
@@ -70,17 +70,17 @@ const Dashboard = () => {
                                      breakfast 
                                  </div>
                             </div>
-                       </div>
-                       <div className="col-sm-4 upcoming">
+                            <div className="upcoming">
                                  <div className="upcoming">
                                       <h1>Upcoming meals</h1>
                                  </div>
                             </div>
-                            <div className="col-sm-4 favorites">
+                            <div className="favorites">
                                  <div className="favorites">
                                       <h1>Best meals</h1>
                                  </div>
                             </div>
+                       </div>
                 </div>
             </div>
         </div>
