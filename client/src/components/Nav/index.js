@@ -12,7 +12,7 @@ export default function Navbar() {
     const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
-        if (window.innerWidth <= 780) {
+        if (window.innerWidth <= 680 || click) {
             setButton(false);
         } else {
             setButton(true);
@@ -56,7 +56,7 @@ export default function Navbar() {
                             <Button buttonStyle = "btn--outline" to = "signin" onClick = {closeMobileMenu}>SIGN IN</Button>
                         </li>}
                     </ul>
-                    {button  && <Button buttonStyle = "btn--outline" to = "signin">SIGN IN</Button>}
+                    {button && <Button buttonStyle = "btn--outline" to = "signin">SIGN IN</Button>}
                 </div>
             </nav>
         </>
