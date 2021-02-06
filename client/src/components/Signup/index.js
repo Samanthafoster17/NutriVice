@@ -13,9 +13,19 @@ class  Signup extends Component{
          email: "",
          password: "",
          password2: "",
+         isAuthenticated: false,
          errors: {}
       };
    }
+
+   componentDidMount() {
+      // If logged in and user navigates to Register page, should redirect them to dashboard
+      if (this.state.isAuthenticated) {
+        this.props.history.push("/dashboard");
+      } else {
+         this.props.history.push("/Signup");
+      }
+    }
 
    onChange = e => {
       this.setState({ [e.target.id]: e.target.value });
@@ -33,35 +43,11 @@ class  Signup extends Component{
       };
       console.log(newUser);
 
-      // fetch('http://localhost:5000/api/users/register', {
-      //    method: 'POST',
-      //    headers: {
-      //       'Accept': 'application/json',
-      //       'Content-Type': 'application/json',
-      //    },
-      //    body: JSON.stringify({
-      //       name: this.state.name,
-      //       username: this.state.name,
-      //       email: this.state.email,
-      //       password: this.state.password,
-      //       password2: this.state.password2
-      //     })
-      // })
-
       axios.post('http://localhost:5000/api/users/register', newUser)
-         .then(res => console.log(res)
-         )
-         
-         .catch(err => console.log(err));
-
-
-         this.setState({
-            name: "",
-            username: "",
-            email: "",
-            password: "",
-            password2: "",
+         .then(res => {
+            this.state = {isAuthenticated: true};
          })
+         .catch(err => console.log(err));
          this.props.history.push('/dashboard');
 
       console.log('out here in submit');

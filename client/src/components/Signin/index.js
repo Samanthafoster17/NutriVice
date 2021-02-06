@@ -17,6 +17,15 @@ class Signin extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   // If logged in and user navigates to Register page, should redirect them to dashboard
+  //   if (this.state.isAuthenticated) {
+  //     this.props.history.push("/dashboard");
+  //   } else {
+  //      this.props.history.push("/Signin");
+  //   }
+  // }
+
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
@@ -36,23 +45,16 @@ class Signin extends Component {
         const { token } = res.data;
         
         localStorage.setItem('jwtToken', token);
-        this.setState({isAuthenticated: true});
         const decodedToken = jwt_decode(token);
-        console.log(decodedToken);
-
-        const setAuthToken = token => {
-           if(token) {
-            axios.defaults.headers.common["Authorization"] = token;
-           } else {
-            delete axios.defaults.headers.common["Authorization"];
-           }
-        };
+        localStorage.setItem('decodedTokenID', (decodedToken.id))
+        console.log(decodedToken.id);
+        this.state = {isAuthenticated: true};
         
       })
+      .then(res => this.props.history.push('/dashboard'))
       .catch(err => {
        console.log(err);
       })
-      this.props.history.push('/dashboard');
   };
 
     render() {
