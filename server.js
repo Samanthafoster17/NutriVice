@@ -5,6 +5,7 @@ const passport = require('passport');
 const app = express();
 const secretOrKey = "secret";
 const cors =require("cors");
+const session = require("express-session");
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -12,6 +13,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+
 
 const PORT = process.env.PORT || 5000;
 // connect to database
@@ -33,7 +35,7 @@ app.use(passport.initialize());
 
 require('./config/passport')(passport);
 
-app.use('/api/users', require('./routes/api/user-route'));
+app.use(require('./routes'));
 
 app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

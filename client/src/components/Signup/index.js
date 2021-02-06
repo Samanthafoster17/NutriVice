@@ -48,7 +48,7 @@ class  Signup extends Component{
       //     })
       // })
 
-      axios.post('http://localhost:5000/api/users/register', newUser)
+      axios.post('http://localhost:5000/api/register', newUser)
          .then(res => console.log(res)
          )
          
