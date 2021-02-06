@@ -49,7 +49,9 @@ class  Signup extends Component{
       // })
 
       axios.post('http://localhost:5000/api/users/register', newUser)
-         .then(res => console.log(res))
+         .then(res => console.log(res)
+         )
+         
          .catch(err => console.log(err));
 
 
@@ -60,6 +62,7 @@ class  Signup extends Component{
             password: "",
             password2: "",
          })
+         this.props.history.push('/dashboard');
 
       console.log('out here in submit');
    }

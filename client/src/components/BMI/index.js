@@ -17,6 +17,9 @@ export default class BMI extends React.Component {
       gender: '',
       age: '',
       goalWeight: '',
+      save: {
+        clicked: false
+      }
     }
 
     this.handleHeightFeetChange = this.handleHeightFeetChange.bind(this);
@@ -212,9 +215,21 @@ export default class BMI extends React.Component {
     }
   }
 
+  handleSave = (event) => {
+    const {name, checked } = event.target;
+
+    this.setState((prevState) => {
+      let save = prevState.save;
+      save[name] = checked;
+      return save;
+
+    });
+    
+  };
+
   saveData() {
     let bmr = this.getBMR();
-    if(this.getCalPerDay(bmr)) {
+    if(this.state.save.clicked === true) {
       const newData = {
         weight: this.state.weight,
             bmi: this.calculateBMI(),
@@ -225,6 +240,7 @@ export default class BMI extends React.Component {
   
       axios.post('http://localhost:5000/api/users/data', newData)
       .then(res => console.log(res))
+      .then(alert("Your information has been saved! you may continue"))
     }
   }
 
@@ -333,7 +349,10 @@ export default class BMI extends React.Component {
                 <p>Please verify all information is corrrect for accuracy</p>
                 <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.saveData()} type="checkbox" name="clicked" />
                <label className="form-check-label">Save My information</label>
+<<<<<<< HEAD
 
+=======
+>>>>>>> eb2f30ce95179173cfff2e292064cc87d1da9d16
                 <button id="filterBtnThree" className="btn btn-default filter-button">
                   <Link to={"/DietPref"}>Continue</Link></button>
               </div>
