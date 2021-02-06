@@ -226,21 +226,26 @@ export default class BMI extends React.Component {
     });
     
   };
-
   saveData() {
     let bmr = this.getBMR();
-    if(this.state.save.clicked === true) {
+    if ((this.getCalPerDay(bmr)) && (this.state.save.clicked === true)) {
+      const decodedToken = localStorage.getItem('decodedTokenID')
+      console.log("TOKEN DECODED", decodedToken)
       const newData = {
+        userId: decodedToken,
         weight: this.state.weight,
-            bmi: this.calculateBMI(),
-            bmr: this.getBMR(),
-            cpd: this.getCalPerDay(bmr)
+        bmi: this.calculateBMI(),
+        bmr: this.getBMR(),
+        cpd: this.getCalPerDay(bmr)
       };
       console.log(newData);
-  
-      axios.post('http://localhost:5000/api/users/data', newData)
-      .then(res => console.log(res))
-      .then(alert("Your information has been saved! you may continue"))
+
+      axios.post('http://localhost:5000/api/data', newData)
+        .then(res => console.log(res))
+        .then(alert("Your information has been saved! you may continue"))
+    }
+    else if (this.state.clicked === true) {
+      alert("all fields required")
     }
   }
 

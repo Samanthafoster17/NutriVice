@@ -30,7 +30,7 @@ class Signin extends Component {
     };
     console.log(userInfo);
 
-      axios.post('http://localhost:5000/api/users/login', userInfo)
+      axios.post('http://localhost:5000/api/login', userInfo)
       .then(res => {
         console.log(res);
         const { token } = res.data;
@@ -38,7 +38,9 @@ class Signin extends Component {
         localStorage.setItem('jwtToken', token);
         this.setState({isAuthenticated: true});
         const decodedToken = jwt_decode(token);
-        console.log(decodedToken);
+        localStorage.setItem('decodedToken', JSON.stringify(decodedToken))
+        localStorage.setItem('decodedTokenID', (decodedToken.id))
+        console.log(decodedToken.id);
 
         const setAuthToken = token => {
            if(token) {
