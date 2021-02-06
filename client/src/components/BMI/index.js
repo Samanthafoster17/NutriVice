@@ -239,15 +239,12 @@ export default class BMI extends React.Component {
 
     return (
       <div className="BMI">
-        <div className = "container">
-          <div className="row">
-              <div className="col-xs-12">
-                <h1>Your Journey Begins Here!</h1>
-                <p>Enter your information below.</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6">
+        <div className = "BMI-container">
+          <div className="title">
+            <h1>Your Journey Begins Here!</h1>
+            <p>Enter your information below.</p>
+          </div>
+              <div className="user-input">
                 <form>
                   <div className="form-group">
                     <legend>Current Weight</legend>
@@ -328,17 +325,16 @@ export default class BMI extends React.Component {
                 </form>
               </div>
 
-              <div className="col-sm-6">
+              <div className="bmi-stats">
                 <BmiDisplay bmi={bmi} cpd={cpd} bmr={bmr} label={results.label} alertClass={results.alertClass} />
               </div>
-              <div>
+              <div className = "buttons">
                 <br />
                 <p>Please verify all information is corrrect for accuracy</p>
-                <button onClick={this.saveData()}>Save</button>
+                <button id="filterBtnThree" className="btn btn-default filter-button" onClick={this.saveData()}>Save</button>
                 <button id="filterBtnThree" className="btn btn-default filter-button">
                   <Link to={"/DietPref"}>Continue</Link></button>
               </div>
-            </div>
         </div>
       </div>
 
@@ -357,12 +353,12 @@ function BmiDisplay(props) {
         <div>BMR Resluts: {props.bmr} </div>
         <div>Suggested Calories Per Day: {props.cpd}</div>
       </div>
-      <div>
+      <div className >
         <p><strong>What is Basal Metabolic Rate (BMR)?</strong> <br />
 The Basal Metabolic Rate (BMR) estimates not just the amount of calories you burn off when inactive,
 but also the daily calorie number which accounts for your lifestyle activity level. Providing you representation for your everyday calorie consumption. </p>
 
-        <img src={BmiChart} alt="BMI chart" />
+        <img className = "image" src={BmiChart} alt="BMI chart" />
       </div>
     </div>
 
