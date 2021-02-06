@@ -1,30 +1,50 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Button } from '../Button';
+import axios from 'axios';
 
-
+const Progress = () => {
+const [chartData, getChartData] = useState({});
+const [userWeight, getUserWeight] = useState({});
+const [currentDay, getCurrentDay] = useState({});
+}
 
 const Chart = () =>{
+    let userWeight = [];
+    let currentDay = [];
+    axios.get("http://localhost:5000/api/data")
+    .then(res => {
+        console.log(res)
+        for(const dataObj of res.data.data){
+            userWeight.push(parseInt(dataObj.weight))
+            currentDay.push(parseInt(dataObj.date))
+
+
+        }
+    })
+    .catch(err =>{
+        console.log(err)
+    })
+    console.log(currentDay, userWeight)
 
     const data = {
-        labels: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        labels: currentDay,
         datasets: [
             {
                 label: 'Week One',
-                data: [140, 145, 146, 150, 152, 155, 162],
+                data: userWeight,
                 borderColor: ['#2d6a4f'],
                 backgroundColor: ['#52B788'],
                 pointBackgroundColor: '#D8F3dC',
                 pointBorderColor: '#081c15'
              },
-             {
-                label: 'Week Two',
-                data: [155, 158, 163, 168, 165, 168, 170],
-                borderColor: ['#2d6a4f'],
-                backgroundColor: ['#52B788'],
-                pointBackgroundColor: '#D8F3dC',
-                pointBorderColor: '#081c15'
-             },
+            //  {
+            //     label: 'Week Two',
+            //     data: [155, 158, 163, 168, 165, 168, 170],
+            //     borderColor: ['#2d6a4f'],
+            //     backgroundColor: ['#52B788'],
+            //     pointBackgroundColor: '#D8F3dC',
+            //     pointBorderColor: '#081c15'
+            //  },
 
         ]
     }
