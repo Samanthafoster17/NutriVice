@@ -12,6 +12,7 @@ ul {
 
 .highlight {
   color: #ff1a1f;
+  font-size: 1em;
 }
 
 .navbar {
@@ -86,6 +87,7 @@ ul {
 
 .fa-bars {
   color: #fff;
+  font-size: 2rem;
 }
 
 .nav-links-mobile {
@@ -96,16 +98,22 @@ ul {
   display: none;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 680px) {
   .NavbarItems {
     position: relative;
+  }
+
+  .nav-item {
+    width: 100%;
   }
 
   .nav-menu {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     width: 100%;
-    height: 55vh;
+    height: 300px;
     position: absolute;
     top: 60px;
     left: -100%;
@@ -114,6 +122,7 @@ ul {
   }
 
   .nav-menu.active {
+    padding: 1rem 0 0;
     background: #242222;
     left: 0;
     opacity: 1;
@@ -123,7 +132,8 @@ ul {
 
   .nav-links {
     text-align: center;
-    padding: 2rem;
+    align-items: center;
+    padding: 1rem 0 0;
     width: 100%;
     display: table;
   }
