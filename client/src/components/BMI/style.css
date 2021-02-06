@@ -12,10 +12,16 @@
     /* z-index: -999; */
 }
 
-.container {
+.BMI-container {
+    padding: 10px;
     border-radius: 3px;
     border: 1px solid black;
     background: #D8F3DC;
+}
+
+.title {
+    display: inline;
+    text-align: center;
 }
 
 img{
@@ -31,4 +37,45 @@ label{
 
 select{
     width: 275px;;
+}
+.user-input {
+    width: 50%;
+    float: left;
+
+    padding-left: 15px;
+}
+
+.bmi-stats {
+    width: 50%;
+    float: right;   
+}
+
+@media screen and (max-width: 900px) {
+    .title > h1 {
+        font-size: 30px;
+    }
+
+    * {
+        font-size: 16px;
+    }
+
+    legend {
+        font-size: 19px;
+    }
+
+    .form-control {
+        height: 20px
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .BMI-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select {
+        width: 100%;
+    }
 }

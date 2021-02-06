@@ -39,7 +39,7 @@ class Signin extends Component {
     };
     console.log(userInfo);
 
-      axios.post('http://localhost:5000/api/users/login', userInfo)
+      axios.post('http://localhost:5000/api/login', userInfo)
       .then(res => {
         console.log(res);
         const { token } = res.data;

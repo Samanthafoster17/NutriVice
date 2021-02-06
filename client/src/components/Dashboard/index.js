@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import './style.css';
 import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter,SidebarContent, } from "react-pro-sidebar";
-  import { FaList, FaRegHeart } from "react-icons/fa";
-  import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-  import { RiPencilLine } from "react-icons/ri";
-  import { BiCog } from "react-icons/bi";
-  import { FaUser } from "react-icons/fa";
+import { FaList, FaRegHeart } from "react-icons/fa";
+import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { RiPencilLine } from "react-icons/ri";
+import { BiCog } from "react-icons/bi";
+import { FaUser } from "react-icons/fa";
 
 const Dashboard = ( props) => {
       
