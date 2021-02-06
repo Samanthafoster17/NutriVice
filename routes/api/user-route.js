@@ -72,6 +72,8 @@ router.post("/login", (req, res) => {
               expiresIn: 2629800 // keep user logged in for 1 month.
             },
             (err, token) => {
+           
+
               res.json({
                 success: true,
                 token: "Bearer " + token
@@ -87,19 +89,35 @@ router.post("/login", (req, res) => {
     });
   });
 
+  router.get("/signout", (req, res) => {
+    console.log("Logout")
+    req.session.user = undefined;
+    res.redirect("/")
+  })
+  
+
   router.post('/data', (req, res) => {
+    console.log( "DATA2:")
+    console.log("data:", req.body.userId)
+    if (!req.body.userId) {
+      res.redirect("/")
+      console.log("not signed in")
+    }
+    else{
     const newData = new Data({
-      // userId: req.user._id,
+      userId: req.body.userId,
       weight: req.body.weight,    
       bmi: req.body.bmi,
       bmr: req.body.bmr,
       cpd: req.body.cpd
   
     })
+    console.log("HERE", newData)
     newData
     .save()
     .then(Data => res.json(Data))
     .catch(err => console.log(err));
+  }
   })
   
   router.post('/dataPref', (req, res) => {
