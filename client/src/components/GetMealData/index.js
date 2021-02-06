@@ -31,10 +31,10 @@ export default function GetMeal({ preferences }) {
 
     return (
 
-        <div>
+        <div className = "getMeals-container">
             <div className="getMeals">
                 <section className="controls">
-                    <input type="number" placeholder="Calories (e.g. 2000)" onChange={handleChange} />
+                    <input className = "form-control" type="number" placeholder="Calories (e.g. 2000)" onChange={handleChange} />
                     <br />
                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                     <label className="form-check-label"> Use My Suggested Calories  </label>

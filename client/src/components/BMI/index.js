@@ -349,10 +349,6 @@ export default class BMI extends React.Component {
                 <p>Please verify all information is corrrect for accuracy</p>
                 <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.saveData()} type="checkbox" name="clicked" />
                <label className="form-check-label">Save My information</label>
-<<<<<<< HEAD
-
-=======
->>>>>>> eb2f30ce95179173cfff2e292064cc87d1da9d16
                 <button id="filterBtnThree" className="btn btn-default filter-button">
                   <Link to={"/DietPref"}>Continue</Link></button>
               </div>
