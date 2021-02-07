@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import './style.css';
 import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter,SidebarContent, } from "react-pro-sidebar";
 import { FaList, FaRegHeart } from "react-icons/fa";
@@ -7,14 +7,32 @@ import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 
-const Dashboard = () => {
+const Dashboard = ( props) => {
       
     const [menuCollapse, setMenuCollapse] = useState(false);
+    // const [authenticated, setAuthenticated] = useState(false);
     const menuIconClick = () => {
         // switching menu collapse between true or false depending on state
         menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-      };
+    };
 
+    const logout = () =>{
+        // Log user out
+        // Remove token from local storage
+        localStorage.removeItem("decodedTokenID");
+        props.history.push("/Signin");
+    }
+
+    useEffect(() => {
+        const userInfo = localStorage.getItem("decodedTokenID");
+        if(userInfo) {
+            // setAuthenticated(true);
+        } else if (!userInfo){
+            // setAuthenticated(false);
+            props.history.push("/Signin");
+        }
+            console.log(userInfo);
+    })
 
     return(
         <>
@@ -54,7 +72,7 @@ const Dashboard = () => {
                         </SidebarContent>
                         <SidebarFooter>
                             <Menu iconShape="square">
-                                <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                                <MenuItem icon={<FiLogOut />} onClick={logout}>Logout</MenuItem>
                             </Menu>
                         </SidebarFooter>
                         </ProSidebar>
