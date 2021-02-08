@@ -11,7 +11,7 @@ const [currentDay, getCurrentDay] = useState({});
 const Chart = () =>{
     let userWeight = [];
     let currentDay = [];
-    axios.get("http://localhost:5000/api/data")
+    axios.get("/api/data")
     .then(res => {
         console.log(res)
         for(const dataObj of res.data.data){
