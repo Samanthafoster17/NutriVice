@@ -119,6 +119,15 @@ router.post("/login", (req, res) => {
     .catch(err => console.log(err));
   }
   })
+
+  router.get('/data' , (req, res) => {
+    Data.find()
+    .then((results) => { 
+      console.log(results, "123") 
+    res.json(results)
+  })
+
+  })
   
   router.post('/dataPref', (req, res) => {
     const newPref = new Pref({
