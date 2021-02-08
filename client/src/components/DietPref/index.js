@@ -57,7 +57,7 @@ export default class DietPref extends Component {
       preferences: preferences };
     console.log(newPref);
 
-    axios.post('http://localhost:5000/api/users/dataPref', newPref)
+    axios.post('/api/dataPref', newPref)
     .then(res => console.log(res))
     .then(alert("Your preferences have been saved! you may continue"))
   } 

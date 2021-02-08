@@ -43,7 +43,7 @@ class  Signup extends Component{
       };
       console.log(newUser);
 
-      axios.post('http://localhost:5000/api/users/register', newUser)
+      axios.post('/api/register', newUser)
          .then(res => {
             this.state = {isAuthenticated: true};
          })
