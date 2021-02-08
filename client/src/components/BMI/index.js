@@ -240,7 +240,7 @@ export default class BMI extends React.Component {
       };
       console.log(newData);
 
-      axios.post('http://localhost:5000/api/data', newData)
+      axios.post('/api/data', newData)
         .then(res => console.log(res))
         .then(alert("Your information has been saved! you may continue"))
     }
