@@ -8,8 +8,8 @@ import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 
-const Dashboard = ( props) => {
-      
+const Sidebar = (props) => {
+
     const [menuCollapse, setMenuCollapse] = useState(false);
     // const [authenticated, setAuthenticated] = useState(false);
     const menuIconClick = () => {
@@ -23,7 +23,6 @@ const Dashboard = ( props) => {
         localStorage.removeItem("decodedTokenID");
         props.history.push("/Signin");
     }
-
     useEffect(() => {
         const userInfo = localStorage.getItem("decodedTokenID");
         const regToken = localStorage.getItem("regTokenID");
@@ -81,32 +80,11 @@ const Dashboard = ( props) => {
                         </ProSidebar>
                     </div>
                 </div>
-                <div className="col-sm-8">
-                       <div className="dashboard">
-                            <div className="stats">
-                                    <h1 className="head"> Stats will go here up top</h1>
-                            </div>
-                            <div className="todays-plan">
-                                 <div className="meals">
-                                     breakfast 
-                                 </div>
-                            </div>
-                            <div className="upcoming">
-                                 <div className="upcoming">
-                                      <h1>Upcoming meals</h1>
-                                 </div>
-                            </div>
-                            <div className="favorites">
-                                 <div className="favorites">
-                                      <h1>Best meals</h1>
-                                 </div>
-                            </div>
-                       </div>
-                </div>
             </div>
         </div>
         </>
     )
+
 }
 
-export default Dashboard;
+export default Sidebar;

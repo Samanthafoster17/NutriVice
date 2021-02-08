@@ -47,6 +47,11 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className = "nav-item">
+                            <Link to = "/dashboard" className = "nav-links tile" onClick = {closeMobileMenu}>
+                                Dashboard
+                            </Link>
+                        </li>
+                        <li className = "nav-item">
                             <Link to = "/Signup" className = "nav-links tile" onClick = {closeMobileMenu}>
                                 Sign Up
                             </Link>

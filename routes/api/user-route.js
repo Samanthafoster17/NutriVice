@@ -128,6 +128,11 @@ router.post("/login", (req, res) => {
     .save()
     .then(Pref => res.json(Pref) )
   })
+
+  // route to get user information
+  router.post('/accountInfo', (req, res) => {
+    console.log(req);
+  })
   
   // router.get('/dashboard', (req, res) => {})
 

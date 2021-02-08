@@ -7,6 +7,7 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
+import Profile from '../../components/Profile';
 
 const Dashboard = ( props) => {
       
@@ -23,6 +24,8 @@ const Dashboard = ( props) => {
         localStorage.removeItem("decodedTokenID");
         props.history.push("/Signin");
     }
+    console.log(props.isAuthenticated);
+    console.log(props);
 
     useEffect(() => {
         const userInfo = localStorage.getItem("decodedTokenID");
@@ -60,7 +63,7 @@ const Dashboard = ( props) => {
                         <SidebarContent>
                             <Menu iconShape="square">
                                 <MenuItem active={true} icon={<FaUser />}>
-                                Profile
+                                    <Profile />
                                 </MenuItem>
                                 <hr></hr>
                                 <MenuItem icon={<FaList />}>Meal Plan</MenuItem>

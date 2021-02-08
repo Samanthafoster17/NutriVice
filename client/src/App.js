@@ -8,7 +8,8 @@ import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./components/Profile";
 
 
 
@@ -27,7 +28,8 @@ function App() {
         <Route exact path="/Chart" component={Chart} />
         <Route exact path="/Signup" component={Signup}/>
         <Route exact path="/Signin" component={Signin}/>
-        <Route exact path="/dashboard"   component={Dashboard}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/profile" component={Profile}/>
         </Switch>
       </div>
     </Router>
