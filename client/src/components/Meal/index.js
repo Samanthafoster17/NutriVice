@@ -36,7 +36,7 @@ export default function Meal({ meal }) {
 
                 
             </div>
-            <button id="filterBtnTwo" className="btn btn-default filter-button card-bottom" href={meal.sourceUrl}>Go to recipe</button>
+            <a id="filterBtnTwo" className="btn btn-default filter-button card-bottom" href={meal.sourceUrl}>Go to recipe</a>
             </div>
             </div>
         </article>

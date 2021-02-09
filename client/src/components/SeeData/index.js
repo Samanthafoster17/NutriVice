@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import './style.css';
 
 class SeeData extends React.Component 
 {
@@ -28,18 +29,31 @@ class SeeData extends React.Component
       render () {
       const child = this.state.data.map((
           el, index) => {
-              return <div key={index}>
-                  <p>Date: {el.date}</p>
-                  <p>Weight: {el.weight}</p>
-                  <p>
-                      Bmi: {el.bmi}
-                  </p>
-                  <p>Bmr: {el.bmr}</p>
-                  <p>Suggested Calories Per Day: {el.cpd}</p>
-              </div>
+            return <table>
+            <thead>
+                <tr className="col">
+                <th scope="col">Date Updated</th>
+                <th scope="col">Weight</th>
+                <th scope="col">BMI</th>
+                <th scope="col">BMR</th>
+                <th scope="col">Suggested Calories Per Day</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr key={index}>
+                <td>{el.date}</td>
+                <td> {el.weight}</td>
+                <td>
+                     {el.bmi}
+                </td>
+                <td> {el.bmr}</td>
+                <td> {el.cpd}</td>
+               </tr>
+               </tbody>
+            </table>
           
       })
-        return <div>
+        return <div className="container">
                 <div>{child}</div>
               </div>
   
