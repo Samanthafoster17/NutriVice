@@ -96,6 +96,15 @@ router.post("/login", (req, res) => {
   })
   
 
+  router.get('/data/:userId' , (req, res) => {
+    Data.find({userId: req.params.userId})
+    .then((results) => { 
+      console.log(results, "123") 
+  
+    res.json(results)   
+  })
+  })
+
   router.post('/data', (req, res) => {
     console.log( "DATA2:")
     console.log("data:", req.body.userId)
