@@ -106,13 +106,7 @@ router.post("/login", (req, res) => {
   })
 
   router.post('/data', (req, res) => {
-    console.log( "DATA2:")
     console.log("data:", req.body.userId)
-    if (!req.body.userId) {
-      res.redirect("/")
-      console.log("not signed in")
-    }
-    else{
     const newData = new Data({
       userId: req.body.userId,
       weight: req.body.weight,    
@@ -121,23 +115,33 @@ router.post("/login", (req, res) => {
       cpd: req.body.cpd
   
     })
-    console.log("HERE", newData)
+    console.log( newData)
     newData
     .save()
     .then(Data => res.json(Data))
     .catch(err => console.log(err));
-  }
+  })
+  
+
+  router.get('/dataPref/:userId' , (req, res) => {
+    Pref.find({userId: req.params.userId})
+    .then((results) => { 
+      console.log(results, "123") 
+    res.json(results)
+  })
   })
   
   router.post('/dataPref', (req, res) => {
     const newPref = new Pref({
+      userId: req.body.userId,
       preferences: req.body.preferences
     })
     newPref
     .save()
-    .then(Pref => res.json(Pref) )
+    .then(Pref => res.json(Pref))
+    .catch(err => console.log(err));
   })
   
-  // router.get('/dashboard', (req, res) => {})
+  
 
   module.exports = router;
