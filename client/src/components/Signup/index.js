@@ -48,7 +48,7 @@ class  Signup extends Component{
             this.state = {isAuthenticated: true};
          })
          .catch(err => console.log(err));
-         this.props.history.push('/dashboard');
+         this.props.history.push('/bmi');
 
       console.log('out here in submit');
    }

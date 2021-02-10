@@ -10,7 +10,7 @@ function Jumbotron() {
             <h1>Welcome!</h1>
             <p>NutriVice is a meal planner that's all about you!</p>
             <div className = "jumbotron-btns">
-                <Button className = "btns" buttonStyle = "button--outline" buttonSize = "btn--large" >Get Started!</Button>
+                <Button className = "btns" buttonStyle = "button--outline" buttonSize = "btn--large" ><Link to={'/Signup'}>Get Started! </Link></Button>
             </div>
         </div>
     )

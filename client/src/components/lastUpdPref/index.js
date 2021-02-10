@@ -32,16 +32,19 @@ class LastUpdPref extends React.Component
         }
     
       render () {
-      const child = this.state.data;
+      const child = this.state.data.preferences;
           
-              return <div className="card col-md-6" >
-              
-              <p>Date Updated: {child.date}</p>
-                  <p>Dietery Preferences: {child.preferences}</p>
-                  <Link to="/seePref">
-                  <button id="filterBtnTwo" className="btn btn-default filter-button card-bottom" >View History</button>
-                  </Link>
-              </div>
+      return <div className="container">
+      <div className="card" >
+     <div className="card-body">
+     
+         <p>Dietery Preferences: {child}</p>
+         <Link to="/seePref">
+         <button id="filterBtnTwo" className="btn btn-default filter-button card-bottom" >View History</button>
+         </Link>
+     </div>
+     </div>
+     </div>
           
       }
      
