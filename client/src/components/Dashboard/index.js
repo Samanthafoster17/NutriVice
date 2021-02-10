@@ -10,7 +10,6 @@ import { FaUser } from "react-icons/fa";
 import LastUpdated from '../lastUpdated';
 import LastUpdPref from '../lastUpdPref';
 import RndmMeal from '../RandomMeals';
-import { Link } from 'react-router-dom';
 
 const Dashboard = ( props) => {
       
@@ -90,7 +89,8 @@ const Dashboard = ( props) => {
                             <div className="stats">
                                     <h1 className="head"> Latest Stats</h1>
                                     <div> <LastUpdated  />
-                                    <LastUpdPref /></div>
+                                    {/* <LastUpdPref /> */}
+                                    </div>
                             </div>
                             <div className="todays-plan">
                                  <div className="meals">

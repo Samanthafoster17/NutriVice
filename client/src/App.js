@@ -7,14 +7,12 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
 import About from "./components/About";
-
-import Dashboard from "./components/Dashboard";
+// import Dashboard from "./components/Dashboard";
 import SeeData from './components/SeeData';
 import SeePref from "./components/SeePref";
 
@@ -26,7 +24,6 @@ function App() {
   return (
     <Router>
       <div className="APP">
-        <Nav />
         <Switch>
         <Route exact path="/" component={LandingPage}/>
         <Route exact path="/bmi" component={BMI} />

@@ -5,10 +5,12 @@ import Footer from "../../components/Footer"
 
 import Cards from '../../components/Cards';
 import CardItem from "../../components/CardItem";
+import Nav from '../../components/Nav';
 
 function LandingPage() {
     return (
         <>
+            <Nav />
             <Jumbotron />
             <Cards>
                 <CardItem icon = "fa-id-card" text = "Tell us about your goals and preferences, so we can come up with a meal plan just for you"/>
