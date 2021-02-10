@@ -10,7 +10,6 @@ export default class RndmMeal extends React.Component {
     componentDidMount() {
         fetch(
            `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`
-
         )
             .then((respone) => respone.json())
             .then((data) => {

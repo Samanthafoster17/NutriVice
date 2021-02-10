@@ -86,9 +86,9 @@ const Dashboard = (props) => {
                         <div className="dashboard">
                             <div className="stats">
                                 <h1 className="head"> Latest Stats</h1>
-                                <div> <LastUpdated />
+                                {/* <div> <LastUpdated />
                                     <LastUpdPref /></div>
-                            </div>
+                            </div> */}
                             <div className="todays-plan">
                                 <div className="meals">
                                     breakfast

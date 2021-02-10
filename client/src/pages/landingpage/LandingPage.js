@@ -19,7 +19,7 @@ function LandingPage() {
                 <CardItem icon = "fa-calendar-day" text = "Check out your specialized meal plan. You can always change your preferences to get meals better suited to your wants or needs." />
                 <CardItem icon = "fa-blender" text = "Get cooking and track your meals! We'll keep you on track, Bon Apetite!"/>
             </Cards>
-            <div className="container-fluid">
+            <div>
                  <Featured />
             </div>
             <Footer />
