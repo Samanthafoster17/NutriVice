@@ -6,7 +6,8 @@ import Footer from "../../components/Footer"
 import Cards from '../../components/Cards';
 import CardItem from "../../components/CardItem";
 import Nav from '../../components/Nav';
-import RndmMeal from '../../components/RandomMeals';
+import Featured from '../../components/Featured';
+
 
 function LandingPage() {
     return (
@@ -18,7 +19,9 @@ function LandingPage() {
                 <CardItem icon = "fa-calendar-day" text = "Check out your specialized meal plan. You can always change your preferences to get meals better suited to your wants or needs." />
                 <CardItem icon = "fa-blender" text = "Get cooking and track your meals! We'll keep you on track, Bon Apetite!"/>
             </Cards>
-            <RndmMeal />
+            <div className="container-fluid">
+                 <Featured />
+            </div>
             <Footer />
         </>
     )
