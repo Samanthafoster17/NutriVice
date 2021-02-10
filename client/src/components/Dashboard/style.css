@@ -5,6 +5,11 @@
   .sidebar{
       border-radius: 30px;
   }
+  .featured{
+    margin: 10px;
+    padding: 10px;
+    left: 90%;
+}
   .logo-text{
       font-family: Roboto;
       font-weight: 800;
@@ -12,24 +17,9 @@
       font-size: 30px;
       background-color:#52b788 ;
   }
-  .upcoming{
-      float: left;
-      background-color:aquamarine;
-      width: 618px;
-      height: 618px;
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-  }
-  .favorites{
-      float: right;
-      background-color: #52b788;
-      width: 620px;
-      height: 618px;
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-  }
+
+ 
   .stats{
-      height: 300px;
       background-color:aqua;
   }
   .todays-plan{
@@ -66,7 +56,7 @@
   }
   #header .pro-sidebar-inner .pro-sidebar-layout {
     overflow-y: hidden;
-    height: 600px;
+    height: 900px;
     /* width: 200px; */
     color: #081c15;
   }
@@ -103,31 +93,7 @@
     html {
       overflow: hidden;
     }
-    .upcoming{
-        float: left;
-        background-color:aquamarine;
-        width: 345px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-    }
-    .favorites{
-        float: right;
-        background-color: #52b788;
-        width: 345px;
-        height: 618px;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
-    }
     .stats{
-        height: 300px;
         background-color:aqua;
     }
-    .todays-plan{
-        background-color:#fece00 !important;
-        height: 200px;
-    }
-    .sidebar{
-        visibility:hidden;
-    }
-    
   }

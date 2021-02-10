@@ -50,7 +50,6 @@ export default class DietPref extends Component {
     });
     
   };
-
   savePreferences (preferences) {
     if(this.state.save.clicked === true) {
       const decodedToken = localStorage.getItem('decodedTokenID');

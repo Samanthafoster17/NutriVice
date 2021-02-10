@@ -13,7 +13,7 @@ const About = () => {
                     relevance of fast foods at their all time highest, and more people depend on them for
                     for their daily ration, many cant differentiate between good and bad food. <br /> <hr/>
                         NutriVice seeks to put the Healthy back into eating healthy foods because as we all know,
-                    Healthy Eating leads to Healthy Living. 
+                    Healthy Eating leads to Healthy Living. With NutriVice, 
                 </p>
             </section>
         </div>

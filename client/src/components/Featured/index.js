@@ -1,16 +1,14 @@
 import React from "react";
 import './style.css';
-const apiKey = process.env.REACT_APP_API_KEY;
 
-export default class RndmMeal extends React.Component {
+export default class Featured extends React.Component {
     state = {
         meals: []
     }
 
     componentDidMount() {
         fetch(
-           `https://api.spoonacular.com/recipes/random?apiKey=ef0e4c3644cb4ccd9e431d6e807f89e4&number=6`
-
+            'https://api.spoonacular.com/recipes/random?apiKey=ef0e4c3644cb4ccd9e431d6e807f89e4&number=6'
         )
             .then((respone) => respone.json())
             .then((data) => {
@@ -23,14 +21,11 @@ export default class RndmMeal extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container-fluid">
                     <div className="row">
-                        <div className="col-3">
-
-                        </div>
-                        <div className="col-9">
-                        <div className="display-4">Featured Meals</div>
-                        <div className="gid">
+                        <div className="col-12">
+                        <div className="display-4 head">Featured Meals</div>
+                        <div className="gid1">
                         {this.state.meals.map(meals => {
                             return (
                                      <div className="card meal">

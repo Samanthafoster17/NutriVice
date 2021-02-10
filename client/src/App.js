@@ -7,9 +7,7 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-import Nav from "./components/Nav";
-
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
@@ -41,7 +39,6 @@ function App() {
         <Route exact path="/usermeals" component={MealPlan} />
         <Route exact path="/seeData" component={SeeData} />
         <Route exact path='/seePref' component={SeePref} />
-
         </Switch>
       </div>
     </Router>
