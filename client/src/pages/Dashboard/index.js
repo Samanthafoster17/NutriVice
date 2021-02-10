@@ -7,10 +7,7 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
-import LastUpdated from '../lastUpdated';
-import LastUpdPref from '../lastUpdPref';
-import RndmMeal from '../RandomMeals';
-import { Link } from 'react-router-dom';
+import Profile from '../../components/Profile';
 
 const Dashboard = ( props) => {
       
@@ -27,11 +24,12 @@ const Dashboard = ( props) => {
         localStorage.removeItem("decodedTokenID");
         props.history.push("/Signin");
     }
+    console.log(props.isAuthenticated);
+    console.log(props);
 
     useEffect(() => {
         const userInfo = localStorage.getItem("decodedTokenID");
-        const regToken = localStorage.getItem("regTokenID");
-        if(userInfo || regToken) {
+        if(userInfo) {
             // setAuthenticated(true);
             console.log("welcome");
         } else if (!userInfo){
@@ -64,16 +62,16 @@ const Dashboard = ( props) => {
                         <SidebarContent>
                             <Menu iconShape="square">
                                 <MenuItem active={true} icon={<FaUser />}>
-                                Profile
+                                    <Profile />
                                 </MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<FaList />}><Link to={"/Meal"}>Get Daily Meal Plan</Link></MenuItem>
+                                <MenuItem icon={<FaList />}>Meal Plan</MenuItem>
                                 <hr></hr>
                                 <MenuItem icon={<FaRegHeart />}>Favourites</MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<RiPencilLine />}><Link to={"/bmi"} >Update Stats </Link></MenuItem>
+                                <MenuItem icon={<RiPencilLine />}>Stats</MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<BiCog />}><Link to={"/DietPref"} >Update Dietary Preferences </Link></MenuItem>
+                                <MenuItem icon={<BiCog />}>Preferences</MenuItem>
                                 <hr></hr>
                             </Menu>
                         </SidebarContent>
@@ -88,9 +86,7 @@ const Dashboard = ( props) => {
                 <div className="col-sm-8">
                        <div className="dashboard">
                             <div className="stats">
-                                    <h1 className="head"> Latest Stats</h1>
-                                    <div> <LastUpdated  />
-                                    <LastUpdPref /></div>
+                                    <h1 className="head"> Stats will go here up top</h1>
                             </div>
                             <div className="todays-plan">
                                  <div className="meals">
@@ -105,9 +101,6 @@ const Dashboard = ( props) => {
                             <div className="favorites">
                                  <div className="favorites">
                                       <h1>Best meals</h1>
-                                      <div>
-                                      <RndmMeal />
-                                      </div>
                                  </div>
                             </div>
                        </div>
