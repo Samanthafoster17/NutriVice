@@ -38,10 +38,10 @@ class LastUpdated extends React.Component {
                 <div className="card-body">
 
                     <div className="card-text">
-                        Date Updated: <br /> {child.date}<hr />
-          Weight: {child.weight} <hr />
-          BMI: {child.bmi} <hr />
-          BMR: {child.bmr} <hr />
+                        Date Updated: <br /> {child.date || "None Saved"}<hr />
+          Weight: {child.weight || "None Saved"} <hr />
+          BMI: {child.bmi || "None Saved"} <hr />
+          BMR: {child.bmr || "None Saved"} <hr />
           Suggested Calories Per Day: {child.cpd}<hr /></div>
 
                     <Link to="/seeData">
