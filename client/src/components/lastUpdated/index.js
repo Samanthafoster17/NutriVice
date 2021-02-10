@@ -34,18 +34,22 @@ class LastUpdated extends React.Component
       render () {
       const child = this.state.data;
           
-              return <div className="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe" >
-                  <p>Date Updated: {child.date}</p>
-                  <p>Weight: {child.weight}</p>
-                  <p>
-                      BMI: {child.bmi}
-                  </p>
-                  <p>BMR: {child.bmr}</p>
-                  <p>Suggested Calories Per Day: {child.cpd}</p>
-                  <Link to="/seeData">
-                  <button id="filterBtnTwo" className="btn btn-default filter-button card-bottom" >View History</button>
-                  </Link>
-              </div>
+      return <div className="container">
+      <div className="card" >
+          <div className="card-body">
+          <p>Date Updated: {child.date}</p>
+          <p>Weight: {child.weight}</p>
+          <p>
+              BMI: {child.bmi}
+          </p>
+          <p>BMR: {child.bmr}</p>
+          <p>Suggested Calories Per Day: {child.cpd}</p>
+          <Link to="/seeData">
+          <button id="filterBtnTwo" className="btn btn-default filter-button card-bottom" >View History</button>
+          </Link>
+      </div>
+      </div>
+      </div>
           
       }
      

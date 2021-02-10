@@ -49,6 +49,9 @@ class  Signup extends Component{
          })
          .then(res =>  this.props.history.push('/dashboard'))
          .catch(err => console.log(err));
+         this.props.history.push('/bmi');
+
+      console.log('out here in submit');
    }
 
 render() {

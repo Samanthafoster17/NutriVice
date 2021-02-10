@@ -152,7 +152,7 @@ export default class DietPref extends Component {
                <label className="form-check-label">Save</label>
           <br />
 
-          {/* <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link> */}
+          <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>
 
 
           {preferences && <GetMeal preferences={preferences} />}
