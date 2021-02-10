@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export default class Featured extends React.Component {
     state = {
@@ -8,7 +9,7 @@ export default class Featured extends React.Component {
 
     componentDidMount() {
         fetch(
-            'https://api.spoonacular.com/recipes/random?apiKey=ef0e4c3644cb4ccd9e431d6e807f89e4&number=6'
+            `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`
         )
             .then((respone) => respone.json())
             .then((data) => {

@@ -24,28 +24,28 @@ export default function Meal({ meal }) {
 
     return (
         <>
-        <article>
+            <article>
 
-            <div className="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-          <div className="card">
-                <h1 className="card-title">{meal.title}</h1>
-                
-                <img src={imageUrl} alt="recipe" className="card-img-top" />
-                <div className="card-body">
-                <p className="card-text">
-                    Preperation time: {meal.readyInMinutes} minutes <br />
+                <div className="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                    <div className="card">
+                        <h1 className="card-title">{meal.title}</h1>
+
+                        <img src={imageUrl} alt="recipe" className="card-img-top" />
+                        <div className="card-body">
+                            <p className="card-text">
+                                Preperation time: {meal.readyInMinutes} minutes <br />
                     Number of servings: {meal.servings} <br />
-                </p>
+                            </p>
 
 
-                
-            </div>
-            <a id="filterBtnTwo" className="btn btn-default filter-button card-bottom" href={meal.sourceUrl}>Go to recipe</a>
-            </div>
-            </div>
-        </article>
 
-     </>
+                        </div>
+                        <a id="filterBtnTwo" className="btn btn-default filter-button card-bottom" href={meal.sourceUrl}>Go to recipe</a>
+                    </div>
+                </div>
+            </article>
+
+        </>
 
     )
 }

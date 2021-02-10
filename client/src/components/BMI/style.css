@@ -38,6 +38,14 @@ label{
 select{
     width: 275px;;
 }
+
+.bmi_user-input input {
+    width: 80%;
+
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
 .user-input {
     width: 50%;
     float: left;
