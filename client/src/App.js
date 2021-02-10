@@ -11,7 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
-import About from "./components/About";
+import About from "./pages/About";
 import SeePref from "./components/SeePref";
 import SeeData from './components/SeeData';
 

@@ -1,20 +1,18 @@
 import React from 'react';
-import './style.css';
-import BMI from '../../components/BMI';
+import About1 from '../../components/About';
 import Nav2 from '../../components/Nav2';
 import Footer from '../../components/Footer';
 
-const Discover  = () => {
+const About = () => {
 
     return(
         <>
-         <Nav2 />
+        <Nav2 />
         <div className="container">
-             <BMI />
+            <About1 />
         </div>
         <Footer />
         </>
     )
 }
-
-export default Discover;
+export default About;
