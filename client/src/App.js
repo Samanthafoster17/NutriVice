@@ -9,6 +9,8 @@ import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
 import Dashboard from "./components/Dashboard";
+import SeeData from './components/SeeData';
+import SeePref from "./components/SeePref";
 
 
 
@@ -28,6 +30,8 @@ function App() {
         <Route exact path="/Signup" component={Signup}/>
         <Route exact path="/Signin" component={Signin}/>
         <Route exact path="/dashboard"   component={Dashboard}/>
+        <Route exact path="/seeData" component={SeeData} /> 
+        <Route exact path="/seePref" component={SeePref} />
         </Switch>
       </div>
     </Router>
