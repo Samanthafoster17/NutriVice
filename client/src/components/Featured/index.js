@@ -28,7 +28,7 @@ export default class Featured extends React.Component {
                         <div className="gid1">
                         {this.state.meals.map(meals => {
                             return (
-                                     <div className="card meal">
+                                     <div className="card d-flex align-items-start flex-column meal">
                                      <img alt="recipe" className="card-img-top" src={meals.image}></img>
                                      <div className="card-body" >
                                         <h1 className="card-title">{meals.title}</h1>
@@ -36,7 +36,7 @@ export default class Featured extends React.Component {
                                             Health Score: {meals.healthScore} <br />
                                             Preperation Time: {meals.readyInMinutes}
                                         </p>
-                                        <a id="filterBtnTwo" className="btn btn-default filter-button card-bottom" href={meals.sourceUrl}>
+                                        <a id="filterBtnTwo" className="btn btn-default filter-button card-bottom goto" href={meals.sourceUrl}>
                                             Go to recipe
                                         </a>
                                     </div>
