@@ -10,7 +10,6 @@ import LandingPage from "./pages/landingpage/LandingPage";
 import dashboard from "./pages/dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
-import MealPlan from "./components/MealPlan";
 import About from "./components/About";
 import SeePref from "./components/SeePref";
 import SeeData from './components/SeeData';
@@ -36,7 +35,6 @@ function App() {
         <Route exact path="/profile" component={Profile}/>
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/usermeals" component={MealPlan} />
         <Route exact path="/seeData" component={SeeData} />
         <Route exact path='/seePref' component={SeePref} />
         </Switch>

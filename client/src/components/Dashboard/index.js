@@ -1,7 +1,7 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter,SidebarContent, } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem, SidebarHeader, SidebarFooter, SidebarContent, } from "react-pro-sidebar";
 import { FaList, FaRegHeart } from "react-icons/fa";
 import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { RiPencilLine } from "react-icons/ri";
@@ -11,8 +11,8 @@ import LastUpdated from '../lastUpdated';
 import LastUpdPref from '../lastUpdPref';
 import RndmMeal from '../RandomMeals';
 
-const Dashboard = ( props) => {
-      
+const Dashboard = (props) => {
+
     const [menuCollapse, setMenuCollapse] = useState(false);
     // const [authenticated, setAuthenticated] = useState(false);
     const menuIconClick = () => {
@@ -20,7 +20,7 @@ const Dashboard = ( props) => {
         menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
     };
 
-    const logout = () =>{
+    const logout = () => {
         // Log user out
         // Remove token from local storage
         localStorage.removeItem("decodedTokenID");
@@ -30,82 +30,85 @@ const Dashboard = ( props) => {
     useEffect(() => {
         const userInfo = localStorage.getItem("decodedTokenID");
         const regToken = localStorage.getItem("regTokenID");
-        if(userInfo || regToken) {
+        if (userInfo || regToken) {
             // setAuthenticated(true);
             console.log("welcome");
-        } else if (!userInfo){
+        } else if (!userInfo) {
             // setAuthenticated(false);
             props.history.push("/Signin");
         }
-            console.log(userInfo);
+        console.log(userInfo);
     })
 
-    return(
+    return (
         <>
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-3">
-                    <div id="header" className="sidebar">
-                        <ProSidebar collapsed={menuCollapse}>
-                        <SidebarHeader >
-                            <div className="logo-text">
-                                  Menu
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-3">
+                        <div id="header" className="sidebar">
+                            <ProSidebar collapsed={menuCollapse}>
+                                <SidebarHeader >
+                                    <div className="logo-text">
+                                        Menu
                             </div>
-                            <div className="closemenu" onClick={menuIconClick}>
-                                {/* changing menu collapse icon on click */}
-                                {menuCollapse ? (
-                                 <FiArrowRightCircle/>
-                                ) : (
-                                <FiArrowLeftCircle/>
-                                )}
-                             </div>
-                        </SidebarHeader>
-                        <SidebarContent>
-                            <Menu iconShape="square">
-                                <MenuItem active={true} icon={<FaUser />}>
-                                Profile
+                                    <div className="closemenu" onClick={menuIconClick}>
+                                        {/* changing menu collapse icon on click */}
+                                        {menuCollapse ? (
+                                            <FiArrowRightCircle />
+                                        ) : (
+                                                <FiArrowLeftCircle />
+                                            )}
+                                    </div>
+                                </SidebarHeader>
+                                <SidebarContent>
+                                    <Menu iconShape="square">
+                                        <MenuItem active={true} icon={<FaUser />}>
+                                            Profile
                                 </MenuItem>
-                                <hr></hr>
-                                <MenuItem icon={<FaList />}><Link to={"/Meal"}>Get Daily Meal Plan</Link></MenuItem>
-                                <hr></hr>
-                                <MenuItem icon={<FaRegHeart />}>Favourites</MenuItem>
-                                <hr></hr>
-                                <MenuItem icon={<RiPencilLine />}><Link to={"/bmi"} >Update Stats </Link></MenuItem>
-                                <hr></hr>
-                                <MenuItem icon={<BiCog />}><Link to={"/DietPref"} >Update Dietary Preferences </Link></MenuItem>
-                                <hr></hr>
-                            </Menu>
-                        </SidebarContent>
-                        <SidebarFooter>
-                            <Menu iconShape="square">
-                                <Link  to="#"> <MenuItem icon={<FiLogOut />} type="button"  onClick={logout}>Logout</MenuItem> </Link>
-                            </Menu>
-                        </SidebarFooter>
-                        </ProSidebar>
+                                        <hr></hr>
+                                        <Link to={"/Meal"}><MenuItem icon={<FaList />}>Get Daily Meal Plan</MenuItem></Link>
+                                        <hr></hr>
+                                        <Link to={"/bmi"} > <MenuItem icon={<RiPencilLine />}>Update Stats</MenuItem> </Link>
+                                        <hr></hr>
+                                        <Link to={"/DietPref"} ><MenuItem icon={<BiCog />}>Update Dietary Preferences </MenuItem></Link>
+                                        <hr></hr>
+                                    </Menu>
+                                </SidebarContent>
+                                <SidebarFooter>
+                                    <Menu iconShape="square">
+                                        <Link to="#"> <MenuItem icon={<FiLogOut />} type="button" onClick={logout}>Logout</MenuItem> </Link>
+                                    </Menu>
+                                </SidebarFooter>
+                            </ProSidebar>
+                        </div>
                     </div>
-                </div>
-                <div className="col-9">
-                       <div className="row-3">
-                            <div className="stats">
-                                        <h1 className="head"> Latest Stats</h1>
-                                        <LastUpdated  />
-                            </div>
-                       </div>
-                       <div className="row-3">
-                            <div className="stats">
-                                        <h1 className="head"> Latest Stats</h1>
-                                        <LastUpdPref  />
-                            </div>
-                </div>
-               </div>
-                <div className="col md-6">
-                    <div>
-                    <RndmMeal />
+                    <div className="col-4">
+                        <div className="row-3">
+
+                            <h1 className="head"> Latest Stats</h1>
+                            <LastUpdated />
+
+                        </div>
+
                     </div>
-                       
+
+                    <div className="col-3">
+                        <div className="row-3">
+
+                            <h1 className="head"> <br /> </h1>
+                            <br />
+                            <LastUpdPref />
+
+                        </div>
+                    </div>
+                    <div className="col-9">
+                        <div className="row-3">
+                            <RndmMeal />
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }
