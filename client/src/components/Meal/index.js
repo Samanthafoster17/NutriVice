@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export default function Meal({ meal }) {
     const [imageUrl, setImageUrl] = useState("");
@@ -6,7 +7,7 @@ export default function Meal({ meal }) {
 
     useEffect(() => {
         fetch(
-            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=949cc38773a947e191d05b89a2b7e263&includeNutrition=false`
+            `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${apiKey}&includeNutrition=false`
         )
             .then((respone) => respone.json())
             .then((data) => {

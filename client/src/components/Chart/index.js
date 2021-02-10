@@ -37,8 +37,14 @@ export default class Chart extends Component {
     componentDidMount(){
         axios.get('/api/data')
         .then(res => {
-            console.log(res)
-            this.setState({data: res.data})
+            
+            this.setState(prevState => {
+                let data = Object.assign({}, prevState.data);
+                data.labels = res.data.date;
+                data.dataSets.data = res.data.dataSets.data;
+                return { data };
+            })
+
         }).catch(err =>{
             console.log(err)
         })

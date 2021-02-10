@@ -53,15 +53,19 @@ export default class DietPref extends Component {
 
   savePreferences (preferences) {
     if(this.state.save.clicked === true) {
+      const decodedToken = localStorage.getItem('decodedTokenID');
+      const userId = decodedToken;
+      console.log("TOKEN DECODED", decodedToken)
     const newPref = {
+      userId: decodedToken,
       preferences: preferences };
     console.log(newPref);
-
     axios.post('/api/dataPref', newPref)
     .then(res => console.log(res))
     .then(alert("Your preferences have been saved! you may continue"))
   } 
 }
+
 
 
   render() {
