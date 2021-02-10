@@ -7,7 +7,7 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
