@@ -14,13 +14,14 @@ import MealPlan from "./components/MealPlan";
 import About from "./components/About";
 
 
-
+console.log(process.env.REACT_APP_API_KEY)
 
 function App() {
 
   return (
     <Router>
       <div className="APP">
+       
         <Switch>
         <Route exact path="/" component={LandingPage}/>
         <Route exact path="/bmi" component={BMI} />

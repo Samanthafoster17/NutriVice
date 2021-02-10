@@ -66,6 +66,7 @@ export default class DietPref extends Component {
 }
 
 
+
   render() {
     const preferences = Object.keys(this.state.preferences)
       .filter((key) => this.state.preferences[key])
