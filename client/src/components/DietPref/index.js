@@ -60,12 +60,12 @@ export default class DietPref extends Component {
       userId: decodedToken,
       preferences: preferences };
     console.log(newPref);
-
     axios.post('/api/dataPref', newPref)
     .then(res => console.log(res))
     .then(alert("Your preferences have been saved! you may continue"))
   } 
 }
+
 
 
   render() {

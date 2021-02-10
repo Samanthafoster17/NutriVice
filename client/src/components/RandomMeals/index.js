@@ -1,4 +1,5 @@
 import React from "react";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export default class RndmMeal extends React.Component {
     state = {
@@ -7,7 +8,7 @@ export default class RndmMeal extends React.Component {
 
     componentDidMount() {
         fetch(
-            'https://api.spoonacular.com/recipes/random?apiKey=5fe3208958484f22a413982d3ff3136b&number=6'
+           `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`
         )
             .then((respone) => respone.json())
             .then((data) => {
