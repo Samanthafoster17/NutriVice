@@ -130,6 +130,15 @@ router.post("/login", (req, res) => {
     res.json(results)
   })
   })
+
+  router.get('/data' , (req, res) => {
+    Data.find()
+    .then((results) => { 
+      console.log(results, "123") 
+    res.json(results)
+  })
+
+  })
   
   router.post('/dataPref', (req, res) => {
     const newPref = new Pref({
@@ -140,6 +149,11 @@ router.post("/login", (req, res) => {
     .save()
     .then(Pref => res.json(Pref))
     .catch(err => console.log(err));
+  })
+
+  // route to get user information
+  router.post('/accountInfo', (req, res) => {
+    console.log(req);
   })
   
   

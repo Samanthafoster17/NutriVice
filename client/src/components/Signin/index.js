@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import {Link } from 'react-router-dom';
 import './style.css';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
@@ -17,14 +16,14 @@ class Signin extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   // If logged in and user navigates to Register page, should redirect them to dashboard
-  //   if (this.state.isAuthenticated) {
-  //     this.props.history.push("/dashboard");
-  //   } else {
-  //      this.props.history.push("/Signin");
-  //   }
-  // }
+  componentDidMount() {
+    const userInfo = localStorage.getItem("decodedTokenID");
+        if(userInfo) {
+            // if token exist, redirect to dashboard
+            this.props.history.push("/dashboard");
+        }
+            console.log(userInfo);
+  }
 
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
@@ -37,7 +36,6 @@ class Signin extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(userInfo);
 
       axios.post('/api/login', userInfo)
       .then(res => {
@@ -48,7 +46,9 @@ class Signin extends Component {
         const decodedToken = jwt_decode(token);
         localStorage.setItem('decodedTokenID', (decodedToken.id))
         console.log(decodedToken.id);
-        this.state = {isAuthenticated: true};
+        this.setState({isAuthenticated: true});
+        console.log(this.state.isAuthenticated);
+        
         
       })
       .then(res => this.props.history.push('/dashboard'))
@@ -66,11 +66,11 @@ class Signin extends Component {
                   Nutri<span className = "highlight">Vice</span>
               </h1>
               <div className = "quote">
-                <p className="display-4 quotes">
+                <div className="display-4 quotes">
                   {/* <h3 className="quotes"> Famous quote</h3> */}
                   <h4 className="quotes"> “Healthy eating is a way of life, so it’s important to establish routines that are simple, realistically, and ultimately livable.”</h4>
                   <h6 className="quotes">– Horace</h6>
-                </p>
+                </div>
               </div>
                  
               {/* user signin form */}

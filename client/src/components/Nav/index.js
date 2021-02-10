@@ -37,13 +37,18 @@ export default function Navbar() {
                     </div>
                     <ul className = {click ? "nav-menu active" : "nav-menu"}>
                         <li className = "nav-item">
-                            <Link to = "/" className = "nav-links tile" onClick = {closeMobileMenu}>
-                                Home
+                            <Link to = "/discover" className = "nav-links tile" onClick = {closeMobileMenu}>
+                                Discover
                             </Link>
                         </li>
                         <li className = "nav-item">
-                            <Link to = "/contact" className = "nav-links tile" onClick = {closeMobileMenu}>
-                                Contact Us
+                            <Link to = "/dashboard" className = "nav-links tile" onClick = {closeMobileMenu}>
+                                Dashboard
+                            </Link>
+                        </li>
+                        <li className = "nav-item">
+                            <Link to = "/about" className = "nav-links tile" onClick = {closeMobileMenu}>
+                                About
                             </Link>
                         </li>
                         <li className = "nav-item">

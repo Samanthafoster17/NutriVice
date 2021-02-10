@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component} from 'react';
 import './style.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class  Signup extends Component{
@@ -19,12 +18,12 @@ class  Signup extends Component{
    }
 
    componentDidMount() {
-      // If logged in and user navigates to Register page, should redirect them to dashboard
-      if (this.state.isAuthenticated) {
-        this.props.history.push("/dashboard");
-      } else {
-         this.props.history.push("/Signup");
-      }
+      const userInfo = localStorage.getItem("decodedTokenID");
+          if(userInfo) {
+              // if token exist, redirect to dashboard
+              this.props.history.push("/dashboard");
+          }
+              console.log(userInfo);
     }
 
    onChange = e => {
@@ -41,12 +40,14 @@ class  Signup extends Component{
          password: this.state.password,
          password2: this.state.password2
       };
-      console.log(newUser);
+
 
       axios.post('/api/register', newUser)
+
          .then(res => {
-            this.state = {isAuthenticated: true};
+            console.log(res);
          })
+         .then(res =>  this.props.history.push('/dashboard'))
          .catch(err => console.log(err));
          this.props.history.push('/bmi');
 
