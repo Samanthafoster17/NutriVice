@@ -21,11 +21,16 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 // connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nutrivicedb",
-  {useNewUrlParser: true}
-) 
+  {useNewUrlParser: true,
+    useUnifiedTopology: true
+  }) 
 .then(() => console.log("Successful connection to mongoDB"))
 .catch( err => console.log(err));
 
+
+mongoose.connection.on('connected', () =>{
+  console.log('Mongoose is Connected!!!')
+})
 
 if(process.env.NODE_ENV !== "production"){
   app.options("*", cors());
