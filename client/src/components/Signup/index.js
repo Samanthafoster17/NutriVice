@@ -41,7 +41,7 @@ class  Signup extends Component{
          password2: this.state.password2
       };
 
-      axios.post('http://localhost:5000/api/register', newUser)
+      axios.post('/api/register', newUser)
          .then(res => {
             console.log(res);
          })

@@ -57,7 +57,7 @@ export default class DietPref extends Component {
       preferences: preferences };
     console.log(newPref);
 
-    axios.post('http://localhost:5000/api/users/dataPref', newPref)
+    axios.post('/api/dataPref', newPref)
     .then(res => console.log(res))
     .then(alert("Your preferences have been saved! you may continue"))
   } 
@@ -149,7 +149,7 @@ export default class DietPref extends Component {
                <label className="form-check-label">Save</label>
           <br />
 
-          <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>
+          {/* <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link> */}
 
 
           {preferences && <GetMeal preferences={preferences} />}
