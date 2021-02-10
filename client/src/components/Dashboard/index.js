@@ -44,7 +44,7 @@ const Dashboard = ( props) => {
         <>
         <div className="container-fluid">
             <div className="row">
-                <div className="col-sm-2">
+                <div className="col-3">
                     <div id="header" className="sidebar">
                         <ProSidebar collapsed={menuCollapse}>
                         <SidebarHeader >
@@ -84,33 +84,19 @@ const Dashboard = ( props) => {
                         </ProSidebar>
                     </div>
                 </div>
-                <div className="col-sm-8">
-                       <div className="dashboard">
+                <div className="col-9">
+                       <div className="col-9">
                             <div className="stats">
-                                    <h1 className="head"> Latest Stats</h1>
-                                    <div> <LastUpdated  />
-                                    {/* <LastUpdPref /> */}
+                                    <div>
+                                        <h1 className="head"> Latest Stats</h1>
+                                        <LastUpdated  />
+                                        {/* <LastUpdPref /> */}
                                     </div>
                             </div>
-                            <div className="todays-plan">
-                                 <div className="meals">
-                                     breakfast 
-                                 </div>
-                            </div>
-                            <div className="upcoming">
-                                 <div className="upcoming">
-                                      <h1>Upcoming meals</h1>
-                                 </div>
-                            </div>
-                            <div className="favorites">
-                                 <div className="favorites">
-                                      <h1>Best meals</h1>
-                                      <div>
-                                      <RndmMeal />
-                                      </div>
-                                 </div>
-                            </div>
                        </div>
+                </div>
+                <div className="col-9">
+                        <RndmMeal />
                 </div>
             </div>
         </div>
