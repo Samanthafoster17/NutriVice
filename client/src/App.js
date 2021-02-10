@@ -37,6 +37,8 @@ function App() {
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/about" component={About} />
         <Route exact path="/usermeals" component={MealPlan} />
+        <Route exact path="/seeData" component={SeeData} />
+        <Route exact path='/seePref' component={SeePref} />
         </Switch>
       </div>
     </Router>
