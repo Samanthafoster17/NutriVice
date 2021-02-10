@@ -20,7 +20,7 @@ class Profile extends Component {
     
     const userID = JSON.parse(localStorage.getItem('decodedToken'));
     console.log(userID.name);
-    axios.get('http://localhost:5000/api/getInfo', userID)
+    axios.get('/api/getInfo', userID)
         .then( res => {
             console.log(res);
         })

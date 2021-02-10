@@ -5,11 +5,11 @@
   .sidebar{
       border-radius: 30px;
   }
-  .featured{
+  /* .featured{
     margin: 10px;
     padding: 10px;
     left: 90%;
-}
+} */
   .logo-text{
       font-family: Roboto;
       font-weight: 800;
@@ -17,11 +17,23 @@
       font-size: 30px;
       background-color:#52b788 ;
   }
+  
 
  
-  .stats{
-      background-color:aqua;
-  }
+ .col-9{
+   background-color:white;
+ }
+
+ .container{
+   background-color: white !important;
+ }
+
+ 
+ .row{
+   background-color: white;
+ }
+
+
   .todays-plan{
       background-color:#fece00 !important;
       height: 200px;
