@@ -8,6 +8,7 @@ import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
+
 import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/about" component={About} />
         <Route exact path="/usermeals" component={MealPlan} />
+
         </Switch>
       </div>
     </Router>

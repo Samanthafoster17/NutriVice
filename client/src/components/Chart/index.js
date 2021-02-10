@@ -2,16 +2,19 @@ import React, { Component, useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import axios from 'axios';
 
+
+
+
 const Progress = () => {
 const [chartData, getChartData] = useState({});
-const [userWeight, getUserWeight] = useState({});
-const [currentDay, getCurrentDay] = useState({});
+const [userWeight, getUserWeight] = useState([]);
+const [currentDay, getCurrentDay] = useState([]);
 }
 
 const Chart = () =>{
     let userWeight = [];
     let currentDay = [];
-    axios.get("http://localhost:5000/api/data")
+    axios.get("/api/data")
     .then(res => {
         console.log(res)
         for(const dataObj of res.data.data){
@@ -32,8 +35,8 @@ const Chart = () =>{
             {
                 label: 'Week One',
                 data: userWeight,
-                borderColor: ['#2d6a4f'],
-                backgroundColor: ['#52B788'],
+                borderColor: '#2d6a4f',
+                backgroundColor: '#52B788',
                 pointBackgroundColor: '#D8F3dC',
                 pointBorderColor: '#081c15'
              },

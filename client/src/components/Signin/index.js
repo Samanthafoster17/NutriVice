@@ -37,7 +37,7 @@ class Signin extends Component {
       password: this.state.password
     };
 
-      axios.post('http://localhost:5000/api/login', userInfo)
+      axios.post('/api/login', userInfo)
       .then(res => {
         console.log(res);
         const { token } = res.data;
