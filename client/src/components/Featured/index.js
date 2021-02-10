@@ -25,7 +25,7 @@ export default class Featured extends React.Component {
                     <div className="row">
                         <div className="col-12">
                         <div className="display-4 head">Featured Meals</div>
-                        <div className="gid">
+                        <div className="gid1">
                         {this.state.meals.map(meals => {
                             return (
                                      <div className="card meal">
