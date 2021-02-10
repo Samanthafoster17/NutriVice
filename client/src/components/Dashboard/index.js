@@ -20,7 +20,7 @@ const Dashboard = (props) => {
         menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
     };
 
-    const logout = (req, res) => {
+    const logout = () => {
         // Log user out
         // Remove token from local storage
         localStorage.removeItem("decodedTokenID");
@@ -37,7 +37,7 @@ const Dashboard = (props) => {
             console.log("welcome");
         } else if (!userInfo) {
             // setAuthenticated(false);
-            // props.history.push("/Signin");
+            props.history.push("/Signin");
         }
         console.log(userInfo);
     })
