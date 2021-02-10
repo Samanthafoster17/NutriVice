@@ -85,18 +85,24 @@ const Dashboard = ( props) => {
                     </div>
                 </div>
                 <div className="col-9">
-                       <div className="col-9">
+                       <div className="row-3">
                             <div className="stats">
-                                    <div>
                                         <h1 className="head"> Latest Stats</h1>
                                         <LastUpdated  />
-                                        {/* <LastUpdPref /> */}
-                                    </div>
                             </div>
                        </div>
+                       <div className="row-3">
+                            <div className="stats">
+                                        <h1 className="head"> Latest Stats</h1>
+                                        <LastUpdPref  />
+                            </div>
                 </div>
-                <div className="col-9">
-                        <RndmMeal />
+               </div>
+                <div className="col md-6">
+                    <div>
+                    <RndmMeal />
+                    </div>
+                       
                 </div>
             </div>
         </div>
