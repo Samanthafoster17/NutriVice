@@ -9,11 +9,13 @@ import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
 
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
 import About from "./components/About";
+import SeePref from "./components/SeePref";
+import SeeData from './components/SeeData';
 
 
 console.log(process.env.REACT_APP_API_KEY)
@@ -37,6 +39,8 @@ function App() {
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/about" component={About} />
         <Route exact path="/usermeals" component={MealPlan} />
+        <Route exact path="/seeData" component={SeeData} />
+        <Route exact path='/seePref' component={SeePref} />
 
         </Switch>
       </div>

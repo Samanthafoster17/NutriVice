@@ -5,13 +5,10 @@ const passport = require('passport');
 const app = express();
 const secretOrKey = "secret";
 const cors =require("cors");
-<<<<<<< HEAD
 require('dotenv').config()
 console.log(process.env)
 
 
-=======
->>>>>>> b0aafd511fad58a6253377d5a0ad427005da0286
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
