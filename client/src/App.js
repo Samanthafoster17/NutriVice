@@ -8,9 +8,13 @@ import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Nav from "./components/Nav";
-import Dashboard from "./components/Dashboard";
-import SeeData from './components/SeeData';
-import SeePref from "./components/SeePref";
+
+import Dashboard from "./pages/Dashboard";
+import Profile from "./components/Profile";
+import Discover from "./pages/Discover";
+import MealPlan from "./components/MealPlan";
+import About from "./components/About";
+
 
 console.log(process.env.REACT_APP_API_KEY)
 
@@ -28,9 +32,12 @@ function App() {
         <Route exact path="/Chart" component={Chart} />
         <Route exact path="/Signup" component={Signup}/>
         <Route exact path="/Signin" component={Signin}/>
-        <Route exact path="/dashboard"   component={Dashboard}/>
-        <Route exact path="/seeData" component={SeeData} /> 
-        <Route exact path="/seePref" component={SeePref} />
+        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/profile" component={Profile}/>
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/usermeals" component={MealPlan} />
+
         </Switch>
       </div>
     </Router>

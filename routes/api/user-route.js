@@ -150,6 +150,11 @@ router.post("/login", (req, res) => {
     .then(Pref => res.json(Pref))
     .catch(err => console.log(err));
   })
+
+  // route to get user information
+  router.post('/accountInfo', (req, res) => {
+    console.log(req);
+  })
   
   
 
