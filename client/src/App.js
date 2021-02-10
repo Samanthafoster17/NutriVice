@@ -7,13 +7,7 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-<<<<<<< HEAD
 import Dashboard from "./pages/Dashboard";
-=======
-import Nav from "./components/Nav";
-
-import Dashboard from "./components/Dashboard";
->>>>>>> c92ccfeca1fe5d6549bb52d3fe17fc380ae8bb66
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import MealPlan from "./components/MealPlan";
@@ -43,12 +37,6 @@ function App() {
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/about" component={About} />
         <Route exact path="/usermeals" component={MealPlan} />
-<<<<<<< HEAD
-=======
-        <Route exact path="/seeData" component={SeeData} />
-        <Route exact path='/seePref' component={SeePref} />
-
->>>>>>> c92ccfeca1fe5d6549bb52d3fe17fc380ae8bb66
         </Switch>
       </div>
     </Router>
