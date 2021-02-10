@@ -32,7 +32,9 @@
       background-color:#52b788 ;
   }
   
-
+  html{
+    width: 100%;
+  }
  
  .col-9{
    background-color:white;
@@ -115,9 +117,11 @@
     padding: 20px;
   }
   
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 780px) {
     html {
-      overflow: hidden;
+      overflow: scroll;
+      width: max-content;
+      align-content: center;
     }
     .stats{
         background-color:aqua;

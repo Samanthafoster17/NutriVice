@@ -24,7 +24,10 @@ const Dashboard = (props) => {
         // Log user out
         // Remove token from local storage
         localStorage.removeItem("decodedTokenID");
-        props.history.push("/Signin");
+        localStorage.removeItem("jwtToken");
+       
+        window.location.assign('/signin')
+        // props.history.push("/Signin");
     }
 
     useEffect(() => {
@@ -35,7 +38,8 @@ const Dashboard = (props) => {
             console.log("welcome");
         } else if (!userInfo) {
             // setAuthenticated(false);
-            props.history.push("/Signin");
+            // props.history.push("/Signin");
+            window.location.assign('/signin')
         }
         console.log(userInfo);
     })
@@ -72,6 +76,8 @@ const Dashboard = (props) => {
                                         <hr></hr>
                                         <Link to={"/DietPref"} ><MenuItem icon={<BiCog />}>Update Dietary Preferences </MenuItem></Link>
                                         <hr></hr>
+                                        <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Saved Dietary Preferences</MenuItem></Link>
+                                <hr></hr>
                                     </Menu>
                                 </SidebarContent>
                                 <SidebarFooter>
@@ -82,7 +88,7 @@ const Dashboard = (props) => {
                             </ProSidebar>
                         </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-9">
                         <div className="row-3">
 
                             <h1 className="head"> Latest Stats</h1>
@@ -92,7 +98,7 @@ const Dashboard = (props) => {
 
                     </div>
 
-                    <div className="col-3">
+                    {/* <div className="col-3">
                         <div className="row-3">
 
                             <h1 className="head"> <br /> </h1>
@@ -100,7 +106,7 @@ const Dashboard = (props) => {
                             <LastUpdPref />
 
                         </div>
-                    </div>
+                    </div> */}
                     <div className="col-9">
                         <div className="row-3">
                             <RndmMeal />
