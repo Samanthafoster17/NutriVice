@@ -8,23 +8,24 @@ class Profile extends Component {
     constructor() {
         super();
         this.state = {
-          show: false
+          show: false,
+          name: this.userID
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-        this.getInfo = this.getInfo.bind(this);
     }
 
   showModal = () => {
     this.setState({ show: true });
+    
+    const userID = JSON.parse(localStorage.getItem('decodedToken'));
+    console.log(userID.name);
+    axios.get('http://localhost:5000/api/getInfo', userID)
+        .then( res => {
+            console.log(res);
+        })
+
   }
- getInfo = () => {
-     const userID = localStorage.getItem('decodedTokenID');
-     axios.get('/api/getInfo', userID)
-     .then( res => {
-         console.log(res);
-     })
- }
 
   hideModal = () => {
     this.setState({ show: false });
@@ -39,7 +40,7 @@ class Profile extends Component {
                     <h3 className="display-4 heading">Account Info</h3>
                     <div className="form">
                         <div className="card">
-                            <h3>Name: </h3>
+                            <h3>Name: {this.state.name} </h3>
                         </div>
                         <div className="card">
                             <h3>Email: </h3>
@@ -62,7 +63,9 @@ class Profile extends Component {
                     </div>
                 </div>
                 </Modal>
+                <div onClick={this.getInfo}>
                 <Link to="#" onClick={this.showModal}> Profile</Link>
+                </div>
                 {/* <h5  onClick={this.showModal} >Profile</h5> */}
                 {/* <button type="text" onClick={this.showModal}>
                     Profile

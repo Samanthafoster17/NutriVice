@@ -17,6 +17,15 @@ class  Signup extends Component{
       };
    }
 
+   componentDidMount() {
+      const userInfo = localStorage.getItem("decodedTokenID");
+          if(userInfo) {
+              // if token exist, redirect to dashboard
+              this.props.history.push("/dashboard");
+          }
+              console.log(userInfo);
+    }
+
    onChange = e => {
       this.setState({ [e.target.id]: e.target.value });
    };

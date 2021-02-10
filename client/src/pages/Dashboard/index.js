@@ -29,8 +29,7 @@ const Dashboard = ( props) => {
 
     useEffect(() => {
         const userInfo = localStorage.getItem("decodedTokenID");
-        const regToken = localStorage.getItem("regTokenID");
-        if(userInfo || regToken) {
+        if(userInfo) {
             // setAuthenticated(true);
             console.log("welcome");
         } else if (!userInfo){
