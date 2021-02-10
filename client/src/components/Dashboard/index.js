@@ -6,6 +6,10 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
+import LastUpdated from '../lastUpdated';
+import LastUpdPref from '../lastUpdPref';
+import RndmMeal from '../RandomMeals';
+import { Link } from 'react-router-dom';
 
 const Dashboard = ( props) => {
       
@@ -60,13 +64,13 @@ const Dashboard = ( props) => {
                                 Profile
                                 </MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<FaList />}>Meal Plan</MenuItem>
+                                <MenuItem icon={<FaList />}><Link to={"/Meal"}>Get Daily Meal Plan</Link></MenuItem>
                                 <hr></hr>
                                 <MenuItem icon={<FaRegHeart />}>Favourites</MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<RiPencilLine />}>Stats</MenuItem>
+                                <MenuItem icon={<RiPencilLine />}><Link to={"/bmi"} >Update Stats </Link></MenuItem>
                                 <hr></hr>
-                                <MenuItem icon={<BiCog />}>Preferences</MenuItem>
+                                <MenuItem icon={<BiCog />}><Link to={"/DietPref"} >Update Dietary Preferences </Link></MenuItem>
                                 <hr></hr>
                             </Menu>
                         </SidebarContent>
@@ -81,7 +85,9 @@ const Dashboard = ( props) => {
                 <div className="col-sm-8">
                        <div className="dashboard">
                             <div className="stats">
-                                    <h1 className="head"> Stats will go here up top</h1>
+                                    <h1 className="head"> Latest Stats</h1>
+                                    <div> <LastUpdated  />
+                                    <LastUpdPref /></div>
                             </div>
                             <div className="todays-plan">
                                  <div className="meals">
@@ -96,6 +102,9 @@ const Dashboard = ( props) => {
                             <div className="favorites">
                                  <div className="favorites">
                                       <h1>Best meals</h1>
+                                      <div>
+                                      <RndmMeal />
+                                      </div>
                                  </div>
                             </div>
                        </div>
