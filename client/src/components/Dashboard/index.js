@@ -42,7 +42,7 @@ const Dashboard = (props) => {
 
     return (
         <>
-            <div className="container-fluid">
+            <div className="dashboard-background container-fluid">
                 <div className="row">
                     <div className="col-3">
                         <div id="header" className="sidebar">
