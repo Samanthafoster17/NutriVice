@@ -5,3 +5,5 @@
 /client/node_modules
 /front-end/node_modules
 /client/.eslintcashe
+.env
+/client/.env
