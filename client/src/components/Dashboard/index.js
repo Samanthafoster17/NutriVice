@@ -26,7 +26,8 @@ const Dashboard = (props) => {
         localStorage.removeItem("decodedTokenID");
         localStorage.removeItem("jwtToken");
        
-        props.history.push("/Signin");
+        window.location.assign('/signin')
+        // props.history.push("/Signin");
     }
 
     useEffect(() => {
@@ -37,7 +38,8 @@ const Dashboard = (props) => {
             console.log("welcome");
         } else if (!userInfo) {
             // setAuthenticated(false);
-            props.history.push("/Signin");
+            // props.history.push("/Signin");
+            window.location.assign('/signin')
         }
         console.log(userInfo);
     })
