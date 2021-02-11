@@ -1,10 +1,12 @@
 import React from 'react';
+import Navbar from '../Nav2';
 
 const About = () => {
 
 
     return(
         <div className="container">
+            <Navbar />
             <section>
                 <h2 className="display-4">Why NutriVice?</h2>
                 <p className="lead">
