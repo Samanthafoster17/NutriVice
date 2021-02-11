@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { Component} from 'react';
 import './style.css';
+import Nav from './../Nav';
+import Footer from '../Footer';
 
 
 class  Signup extends Component{
@@ -57,6 +59,8 @@ class  Signup extends Component{
 render() {
    const { errors } = this.state;
    return (
+      <>
+      <Nav />
       <div className="signup-container">
              <div className = "pillar">
                <h1 className="lead brand">
@@ -129,6 +133,8 @@ render() {
                
           {/* sales texts */}
       </div>
+      <Footer />
+      </>
    )
 }
 }
