@@ -9,7 +9,7 @@ export default class Featured extends React.Component {
 
     componentDidMount() {
         fetch(
-            `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`
+            `https://api.spoonacular.com/recipes/random?apiKey=950f688068644aa4be7925c0de82b969&number=6`
         )
             .then((respone) => respone.json())
             .then((data) => {

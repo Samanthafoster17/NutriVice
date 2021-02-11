@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import './style.css';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import Nav from './../Nav';
+import Footer from '../Footer';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -60,6 +62,8 @@ class Signin extends Component {
     render() {
       const { errors } = this.state;
       return (
+        <>
+         <Nav />
         <div className="main">
             <div className="pillar">
               <h1 className="lead brand">
@@ -108,6 +112,8 @@ class Signin extends Component {
              </div>
   
         </div>
+        <Footer />
+        </>
       )
     }
 }
