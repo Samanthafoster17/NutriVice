@@ -7,10 +7,10 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-import dashboard from "./pages/dashboard";
+import dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
-import About from "./components/About";
+import About from "./pages/About";
 import SeePref from "./components/SeePref";
 import SeeData from './components/SeeData';
 
