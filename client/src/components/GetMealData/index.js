@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MealList from "../MealList";
 import axios from 'axios';
 import "./style.css";
+import Navbar from "../Nav2";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 
@@ -57,7 +58,7 @@ export default function GetMeal({ preferences }) {
 
     function getMealData() {
         fetch(
-            `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${calories}${cals}&diet=${preferences}`
+            `https://api.spoonacular.com/mealplanner/generate?apiKey=799c454c6da54da4bab574ff67c13190&timeFrame=day&targetCalories=${calories}${cals}&diet=${preferences}`
         )
             .then((response) => response.json())
             .then((data) => {
@@ -73,6 +74,7 @@ export default function GetMeal({ preferences }) {
     return (
 
         <div className="getMeals-container">
+            <Navbar />
             <div className="getMeals">
                 <section className="controls">
                     <input className="form-control" type="number" placeholder="Calories (e.g. 2000)" onChange={handleChange} />
