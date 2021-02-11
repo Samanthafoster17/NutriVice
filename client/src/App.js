@@ -15,8 +15,6 @@ import SeePref from "./components/SeePref";
 import SeeData from './components/SeeData';
 
 
-console.log(process.env.REACT_APP_API_KEY)
-
 function App() {
 
   return (
