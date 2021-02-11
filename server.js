@@ -20,9 +20,15 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5000;
 // connect to database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nutrivicedb",
-  {useNewUrlParser: true}
-) 
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/nutrivicedb',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+)
 .then(() => console.log("Successful connection to mongoDB"))
 .catch( err => console.log(err));
 
