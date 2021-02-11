@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import GetMeal from '../GetMealData';
 import "./style.css";
+import Navbar from '../Nav2';
 
 export default class DietPref extends Component {
   constructor() {
@@ -74,6 +75,7 @@ export default class DietPref extends Component {
 
     return (
       <div className="form-check">
+        <Navbar />
         <header className="header">
           <h1>Choose Diet Preferences</h1>
           <small>

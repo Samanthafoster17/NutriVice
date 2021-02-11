@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import Navbar from '../Nav2';
 import './style.css'
 
 class SeePref extends React.Component 
@@ -46,6 +47,7 @@ class SeePref extends React.Component
           
       })
         return <div className="container">
+            <Navbar />
                 <div>{child}</div>
               </div>
   
