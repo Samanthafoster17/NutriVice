@@ -22,7 +22,6 @@
   "bugs": {
     "url": "https://github.com/nickgdam/Project3/issues"
   },
-  "homepage": "https://github.com/nickgdam/Project3",
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
