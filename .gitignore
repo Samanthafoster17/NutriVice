@@ -5,5 +5,8 @@
 /client/node_modules
 /front-end/node_modules
 /client/.eslintcashe
+/client/build
 .env
 /client/.env
+package-lock.json
+yarn-lock.json

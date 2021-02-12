@@ -7,15 +7,13 @@ import GetMeal from './components/GetMealData';
 import DietPref from "./components/DietPref";
 import Chart from "./components/Chart";
 import LandingPage from "./pages/landingpage/LandingPage";
-import dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Profile";
 import Discover from "./pages/Discover";
 import About from "./pages/About";
 import SeePref from "./components/SeePref";
 import SeeData from './components/SeeData';
 
-
-console.log(process.env.REACT_APP_API_KEY)
 
 function App() {
 
