@@ -55,10 +55,14 @@ class SeeData extends React.Component
             </table>
           
       })
-        return <div className="container">
+        return(
+            <>
             <Navbar />
+             <div className="container">
                 <div>{child}</div>
-              </div>
+            </div>
+            </>
+        )
   
         }
     }
