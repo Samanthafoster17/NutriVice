@@ -46,10 +46,15 @@ class SeePref extends React.Component
               </table>
           
       })
-        return <div className="container">
+        return (
+            <>
             <Navbar />
-                <div>{child}</div>
-              </div>
+            <div className="container">
+            <div>{child}</div>
+            </div>
+            </>
+        )
+        
   
         }
 
