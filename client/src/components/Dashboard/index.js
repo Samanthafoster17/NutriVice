@@ -7,7 +7,7 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
-import LastUpdated from '../lastUpdated';
+// import LastUpdated from '../lastUpdated';
 import LastUpdPref from '../lastUpdPref';
 import RndmMeal from '../RandomMeals';
 
@@ -92,7 +92,7 @@ const Dashboard = (props) => {
                         <div className="row-3">
 
                             <h1 className="head"> Latest Stats</h1>
-                            <LastUpdated />
+                           
 
                         </div>
 
