@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import BmiChart from "../images/1848503788-huge.jpg";
-import Navbar from '../Nav2';
-import Footer from '../Footer';
+
+
 
 export default class BMI extends React.Component {
 
@@ -262,7 +262,7 @@ export default class BMI extends React.Component {
 
     return (
      <>
-     <Navbar />
+     
       <div className="BMI">
         <div className="BMI-container">
           <div className="title">
@@ -363,7 +363,7 @@ export default class BMI extends React.Component {
           </div>
         </div>
       </div>
-      <Footer />
+ 
        </>
 
     );
