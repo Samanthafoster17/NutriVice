@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import Navbar from '../Nav2';
+import Nav2 from '../Nav2';
 import './style.css';
+import Footer from "../Footer"
 
 
 class SeeData extends React.Component 
@@ -76,7 +77,7 @@ class SeeData extends React.Component
       })
         return(
             <>
-            <Navbar />
+            <Nav2 />
              <div className="container">
                 <div>{child}</div>
             </div>
