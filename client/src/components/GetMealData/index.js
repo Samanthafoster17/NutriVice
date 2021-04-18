@@ -50,14 +50,14 @@ export default function GetMeal() {
                     return d - c;
                 })
                 setPrefs(
-                    userData[0].preferences()
+                    userData[0].preferences
                 );
                 console.log(userData[0].preferences)
             })
             .catch((err) => { })
     }
 
-    function getMealData() {
+    function getMealData({ }) {
         fetch(
             `https://api.spoonacular.com/mealplanner/generate?apiKey=799c454c6da54da4bab574ff67c13190&timeFrame=day&targetCalories=${calories}${cals}&diet=${prefs}`
         )

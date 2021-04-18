@@ -162,7 +162,7 @@ export default class DietPref extends Component {
           {/* <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link> */}
 
 
-          {preferences}
+          
         </main>
 
       </div>
