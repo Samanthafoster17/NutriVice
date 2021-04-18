@@ -11,7 +11,10 @@ const About = () => {
         <div className="container">
             <About1 />
         </div>
+        <div className="">
         <Footer />
+        </div>
+      
         </>
     )
 }

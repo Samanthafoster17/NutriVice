@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import BmiChart from "../images/1848503788-huge.jpg";
+import Nav2 from "../Nav2";
 
 
 
@@ -262,7 +263,7 @@ export default class BMI extends React.Component {
 
     return (
      <>
-     
+     <Nav2 />
       <div className="BMI">
         <div className="BMI-container">
           <div className="title">

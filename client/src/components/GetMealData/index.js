@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import MealList from "../MealList";
 import axios from 'axios';
 import "./style.css";
-import Navbar from "../Nav2";
+import Nav2 from "../Nav2";
+import Footer from "../Footer";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 
@@ -72,9 +73,11 @@ export default function GetMeal({ preferences }) {
     }
 
     return (
-
+        <>
+             <Nav2 />
         <div className="getMeals-container">
-            <Navbar />
+         
+            {/* <Navbar /> */}
             <div className="getMeals">
                 <section className="controls">
                     <input className="form-control" type="number" placeholder="Calories (e.g. 2000)" onChange={handleChange} />
@@ -95,7 +98,8 @@ export default function GetMeal({ preferences }) {
                 {mealData && <MealList mealData={mealData} calories={calories} />}
             </div>
         </div>
-
+        <Footer />
+</>
     )
 }
 

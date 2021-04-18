@@ -4,7 +4,8 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import GetMeal from '../GetMealData';
 import "./style.css";
-import Navbar from '../Nav2';
+import Nav2 from '../Nav2';
+import Footer from '../Footer';
 
 export default class DietPref extends Component {
   constructor() {
@@ -74,8 +75,10 @@ export default class DietPref extends Component {
       .join(", ");
 
     return (
+      <>
+      <Nav2 />
       <div className="form-check">
-        <Navbar />
+      
         <header className="header">
           <h1>Choose Diet Preferences</h1>
           <small>
@@ -161,7 +164,8 @@ export default class DietPref extends Component {
         </main>
 
       </div>
-
+      <Footer />
+  </>
     )
 
   }
