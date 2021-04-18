@@ -5,7 +5,7 @@ import { Button } from "../Button"
 
 import "./style.css";
 
-export default function Navbar() {
+export default function Nav2() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
     const handleClick = () => setClick(!click);

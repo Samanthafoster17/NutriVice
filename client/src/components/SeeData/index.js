@@ -29,6 +29,25 @@ class SeeData extends React.Component
         }
     
       render () {
+
+        if (this.state.data.length < 1) {
+            
+            return <>
+              <Nav2 />
+            <div className="container">
+                <h1>Not yet updated</h1>
+                <p>
+                    Please return to dashboard to update your stats! <br />
+                     Then you may check back here to track your progress!
+                </p>
+            </div>
+            <Footer />
+            </>
+            
+        }
+
+        else {
+
       const child = this.state.data.map((
           el, index) => {
             return <table>
@@ -43,7 +62,7 @@ class SeeData extends React.Component
             </thead>
             <tbody>
             <tr key={index}>
-                <td>{el.date}</td>
+                <td>{el.date} || Not Yet Updated</td>
                 <td> {el.weight}</td>
                 <td>
                      {el.bmi}
@@ -66,7 +85,7 @@ class SeeData extends React.Component
   
         }
     }
-       
+}
 
 
 
