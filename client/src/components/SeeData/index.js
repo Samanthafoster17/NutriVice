@@ -63,7 +63,7 @@ class SeeData extends React.Component
             </thead>
             <tbody>
             <tr key={index}>
-                <td>{el.date} || Not Yet Updated</td>
+                <td>{el.date} </td>
                 <td> {el.weight}</td>
                 <td>
                      {el.bmi}

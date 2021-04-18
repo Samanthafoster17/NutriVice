@@ -152,7 +152,7 @@ export default class DietPref extends Component {
           </div>
           <br />
           <p><strong>Your selected preferences are:</strong>  {preferences}</p>
-          <p>Please verify your preferences are correct, then scroll down to get your daily meal plan!
+          <p>Please verify your preferences are correct.
                </p>
                <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.savePreferences(preferences)} type="checkbox" name="clicked" />
                <label className="form-check-label">Save</label>
