@@ -360,7 +360,7 @@ export default class BMI extends React.Component {
             <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.saveData()} type="checkbox" name="clicked" />
             <label className="form-check-label">Save My information</label>
             <button id="filterBtnThree" className="btn btn-default filter-button">
-              <Link to={"/DietPref"}>Continue to dietary preferences</Link></button>
+              <Link to={"/Dashboard"}>Home</Link></button>
           </div>
         </div>
       </div>

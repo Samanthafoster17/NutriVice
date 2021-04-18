@@ -156,9 +156,10 @@ export default class DietPref extends Component {
                </p>
                <input className="form-check-input" checked={this.state.save.clicked} onChange={this.handleSave} onClick={this.savePreferences(preferences)} type="checkbox" name="clicked" />
                <label className="form-check-label">Save</label>
+               <button><Link to={"/Dashboard"}>Home</Link></button>
           <br />
 
-          <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>
+          {/* <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link> */}
 
 
           {preferences}
