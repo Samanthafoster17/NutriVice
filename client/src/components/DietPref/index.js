@@ -148,6 +148,7 @@ export default class DietPref extends Component {
               <label className="form-check-label">Pescetarian</label>
               <p> Everything is allowed except meat and meat by-products - some pescetarians eat eggs and dairy, some do not. </p>
             </div>
+            
           </div>
           <br />
           <p> Your selected preferences are: {preferences}</p>
@@ -160,7 +161,7 @@ export default class DietPref extends Component {
           <Link to={"/Meal"}>Only if you have NO diet preferences you may click <strong>here</strong> to continue </Link>
 
 
-          {preferences && <GetMeal preferences={preferences} />}
+          {preferences}
         </main>
 
       </div>

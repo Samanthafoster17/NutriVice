@@ -7,11 +7,11 @@ import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-i
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
-import LastUpdated from '../lastUpdated';
-import LastUpdPref from '../lastUpdPref';
+// import LastUpdated from '../lastUpdated';
+// import LastUpdPref from '../lastUpdPref';
 import RndmMeal from '../RandomMeals';
 
-const Dashboard = (props) => {
+const Dashboard1 = (props) => {
 
     const [menuCollapse, setMenuCollapse] = useState(false);
     // const [authenticated, setAuthenticated] = useState(false);
@@ -78,6 +78,7 @@ const Dashboard = (props) => {
                                         <hr></hr>
                                         <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Saved Dietary Preferences</MenuItem></Link>
                                 <hr></hr>
+                                <Link to={"/seeData"}><MenuItem icon={<FaRegHeart />}>View History</MenuItem></Link>
                                     </Menu>
                                 </SidebarContent>
                                 <SidebarFooter>
@@ -88,7 +89,7 @@ const Dashboard = (props) => {
                             </ProSidebar>
                         </div>
                     </div>
-                    <div className="col-9">
+                    {/* <div className="col-9">
                         <div className="row-3">
 
                             <h1 className="head"> Latest Stats</h1>
@@ -96,7 +97,7 @@ const Dashboard = (props) => {
 
                         </div>
 
-                    </div>
+                    </div> */}
 
                     {/* <div className="col-3">
                         <div className="row-3">
@@ -119,4 +120,4 @@ const Dashboard = (props) => {
     )
 }
 
-export default Dashboard;
+export default Dashboard1;
