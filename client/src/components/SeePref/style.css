@@ -1,5 +1,6 @@
 .container{
     padding: 25px;
+    padding-top: 85px;
     position: relative;
     display: flexbox;
     background-color: whitesmoke;
