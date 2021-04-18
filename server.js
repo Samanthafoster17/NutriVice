@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 // connect to database
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nutrivicedb",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/NutriviceDB",
 
   {
     useNewUrlParser: true,
