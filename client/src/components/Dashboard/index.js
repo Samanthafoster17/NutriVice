@@ -76,7 +76,7 @@ const Dashboard1 = (props) => {
                                         <hr></hr>
                                         <Link to={"/DietPref"} ><MenuItem icon={<BiCog />}>Update Dietary Preferences </MenuItem></Link>
                                         <hr></hr>
-                                        <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Saved Dietary Preferences</MenuItem></Link>
+                                        <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Dietary Preferences</MenuItem></Link>
                                 <hr></hr>
                                 <Link to={"/seeData"}><MenuItem icon={<FaRegHeart />}>View Stat's</MenuItem></Link>
                                     </Menu>
