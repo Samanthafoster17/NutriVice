@@ -50,9 +50,9 @@ export default function GetMeal({ preferences }) {
                     return d - c;
                 })
                 setPrefs(
-                    userData[0].prefs.toString()
+                    userData[0].toString()
                 );
-                console.log(userData[0].prefs)
+                console.log(userData[0])
             })
             .catch((err) => { })
     }
