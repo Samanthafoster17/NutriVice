@@ -7,7 +7,7 @@ import Footer from "../Footer";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 
-export default function GetMeal({ preferences }) {
+export default function GetMeal() {
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState('');
     const [prefs, setPrefs] = useState("");
@@ -50,9 +50,9 @@ export default function GetMeal({ preferences }) {
                     return d - c;
                 })
                 setPrefs(
-                    userData[0].toString()
+                    userData[0].preferences()
                 );
-                console.log(userData[0])
+                console.log(userData[0].preferences)
             })
             .catch((err) => { })
     }
@@ -65,7 +65,7 @@ export default function GetMeal({ preferences }) {
             .then((data) => {
                 setMealData(data);
                 console.log(data)
-                console.log(preferences)
+                console.log(prefs)
             })
             .catch(() => {
                 console.log("error");
