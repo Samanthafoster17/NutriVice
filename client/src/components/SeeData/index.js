@@ -81,7 +81,9 @@ class SeeData extends React.Component
              <div className="container">
                 <div>{child}</div>
             </div>
+            <Footer />
             </>
+           
         )
   
         }
