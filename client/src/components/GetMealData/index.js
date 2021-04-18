@@ -50,16 +50,16 @@ export default function GetMeal({ preferences }) {
                     return d - c;
                 })
                 setPrefs(
-                    userData[0].preferences.toString()
+                    userData[0].prefs.toString()
                 );
-                console.log(userData[0].preferences)
+                console.log(userData[0].prefs)
             })
             .catch((err) => { })
     }
 
     function getMealData() {
         fetch(
-            `https://api.spoonacular.com/mealplanner/generate?apiKey=799c454c6da54da4bab574ff67c13190&timeFrame=day&targetCalories=${calories}${cals}&diet=${preferences}`
+            `https://api.spoonacular.com/mealplanner/generate?apiKey=799c454c6da54da4bab574ff67c13190&timeFrame=day&targetCalories=${calories}${cals}&diet=${prefs}`
         )
             .then((response) => response.json())
             .then((data) => {
