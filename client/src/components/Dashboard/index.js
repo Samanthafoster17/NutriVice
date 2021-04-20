@@ -76,9 +76,9 @@ const Dashboard1 = (props) => {
                                         <hr></hr>
                                         <Link to={"/DietPref"} ><MenuItem icon={<BiCog />}>Update Dietary Preferences </MenuItem></Link>
                                         <hr></hr>
-                                        <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Dietary Preferences</MenuItem></Link>
+                                        {/* <Link to={"/seePref"}><MenuItem icon={<FaRegHeart />}>View Dietary Preferences</MenuItem></Link>
                                 <hr></hr>
-                                <Link to={"/seeData"}><MenuItem icon={<FaRegHeart />}>View Stat's</MenuItem></Link>
+                                <Link to={"/seeData"}><MenuItem icon={<FaRegHeart />}>View Stat's</MenuItem></Link> */}
                                     </Menu>
                                 </SidebarContent>
                                 <SidebarFooter>
@@ -89,7 +89,7 @@ const Dashboard1 = (props) => {
                             </ProSidebar>
                         </div>
                     </div>
-                    {/* <div className="col-9">
+                    <div className="col-6">
                         <div className="row-3">
 
                             <h1 className="head"> Latest Stats</h1>
@@ -97,9 +97,9 @@ const Dashboard1 = (props) => {
 
                         </div>
 
-                    </div> */}
+                    </div>
 
-                    {/* <div className="col-3">
+                    <div className="col-3">
                         <div className="row-3">
 
                             <h1 className="head"> <br /> </h1>
@@ -107,7 +107,7 @@ const Dashboard1 = (props) => {
                             <LastUpdPref />
 
                         </div>
-                    </div> */}
+                    </div>
                     <div className="col-9">
                         <div className="row-3">
                             <RndmMeal />

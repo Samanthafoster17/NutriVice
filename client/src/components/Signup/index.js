@@ -48,10 +48,12 @@ class  Signup extends Component{
 
          .then(res => {
             console.log(res);
+            this.setState({isAuthenticated: true});
+            console.log(this.state.isAuthenticated);
          })
          .then(res =>  this.props.history.push('/dashboard'))
          .catch(err => console.log(err));
-         this.props.history.push('/dashboard');
+         // this.props.history.push('/dashboard');
 
       console.log('out here in submit');
    }

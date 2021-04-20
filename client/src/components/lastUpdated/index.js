@@ -31,17 +31,17 @@ class LastUpdated extends React.Component {
     }
 
     render() {
-        const child = this.state.data;
+        const child = this.state.data || "Not yet updated";
 
         return <div className="container">
             <div className="card" >
                 <div className="card-body">
 
                     <div className="card-text">
-                        Date Updated: <br /> {child.date || "None Saved"}<hr />
-          Weight: {child.weight || "None Saved"} <hr />
-          BMI: {child.bmi || "None Saved"} <hr />
-          BMR: {child.bmr || "None Saved"} <hr />
+                        Date Updated: <br /> {child.date || "Not yet updated"}<hr />
+          Weight: {child.weight || "Not yet updated"} <hr />
+          BMI: {child.bmi || "Not yet updated"} <hr />
+          BMR: {child.bmr || "Not yet updated"} <hr />
           Suggested Calories Per Day: {child.cpd}<hr /></div>
 
                     <Link to="/seeData">
