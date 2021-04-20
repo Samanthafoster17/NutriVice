@@ -34,10 +34,10 @@ const Dashboard1 = (props) => {
         const userInfo = localStorage.getItem("decodedTokenID");
         const regToken = localStorage.getItem("regTokenID");
         if (userInfo || regToken) {
-            setAuthenticated(true);
+            // setAuthenticated(true);
             console.log("welcome");
         } else if (!userInfo) {
-            setAuthenticated(false);
+            // setAuthenticated(false);
             props.history.push("/Signin");
             window.location.assign('/signin')
         }
