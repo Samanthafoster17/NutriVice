@@ -39,7 +39,7 @@ const Dashboard1 = (props) => {
         } else if (!userInfo) {
             // setAuthenticated(false);
             // props.history.push("/signin");
-            window.location.assign('/signin')
+            window.location.assign('/')
         }
         console.log(userInfo);
     })
