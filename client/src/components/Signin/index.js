@@ -53,7 +53,7 @@ class Signin extends Component {
         
         
       })
-      .then(res => this.props.history.push('/dashboard'))
+      .then( this.props.history.push('/dashboard'))
       .catch(err => {
        console.log(err);
       })

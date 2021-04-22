@@ -51,9 +51,10 @@ class  Signup extends Component{
             this.setState({isAuthenticated: true});
             console.log(this.state.isAuthenticated);
                   //   window.location.assign('/dashboard')
+                  this.props.history.push('/dashboard')
          })
-         .then( window.location.assign('/dashboard'))
-         // .then(res =>  this.props.history.push('/dashboard'))
+         // .then( window.location.assign('/dashboard'))
+         // .then( )
          .catch(err => console.log(err));
  
 

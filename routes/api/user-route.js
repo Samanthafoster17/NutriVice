@@ -99,7 +99,7 @@ router.post("/login", (req, res) => {
   router.get('/data/:userId' , (req, res) => {
     Data.find({userId: req.params.userId})
     .then((results) => { 
-      console.log(results, "123") 
+      console.log(results) 
   
     res.json(results)   
   })
@@ -126,7 +126,7 @@ router.post("/login", (req, res) => {
   router.get('/dataPref/:userId' , (req, res) => {
     Pref.find({userId: req.params.userId})
     .then((results) => { 
-      console.log(results, "123") 
+      console.log(results) 
     res.json(results)
   })
   })
@@ -134,7 +134,7 @@ router.post("/login", (req, res) => {
   router.get('/data' , (req, res) => {
     Data.find()
     .then((results) => { 
-      console.log(results, "123") 
+      console.log(results) 
     res.json(results)
   })
 
