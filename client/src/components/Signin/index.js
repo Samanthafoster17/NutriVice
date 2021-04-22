@@ -19,12 +19,12 @@ class Signin extends Component {
   }
 
   componentDidMount() {
-    const userInfo = localStorage.getItem("decodedTokenID");
-        if(userInfo) {
+    const userToken = localStorage.getItem("decodedTokenID");
+        if(userToken) {
             // if token exist, redirect to dashboard
             this.props.history.push("/dashboard");
         }
-            console.log(userInfo);
+            console.log(userToken);
   }
 
   onChange = e => {

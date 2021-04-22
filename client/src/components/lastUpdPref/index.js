@@ -31,13 +31,13 @@ class LastUpdPref extends React.Component {
     }
 
     render() {
-        const child = this.state.data.preferences || "Not yet updated";
+        const child = this.state.data || "Not yet updated";
 
         return <div className="container">
             <div className="card" >
                 <div className="card-body">
                     <div className="card-title">Dietary Preferences:</div>
-                    <div className="card-text">  <hr /> {child || "Not yet updated"} <hr /></div>
+                    <div className="card-text">  <hr /> {child.preferences || "Not yet updated"} <hr /></div>
                     <br />
 
                     <Link to="/seePref">

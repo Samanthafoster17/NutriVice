@@ -38,7 +38,7 @@ const Dashboard1 = (props) => {
             console.log("welcome");
         } else if (!userInfo) {
             // setAuthenticated(false);
-            props.history.push("/signin");
+            // props.history.push("/signin");
             window.location.assign('/signin')
         }
         console.log(userInfo);

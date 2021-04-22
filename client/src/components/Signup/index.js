@@ -20,12 +20,12 @@ class  Signup extends Component{
    }
 
    componentDidMount() {
-      const userInfo = localStorage.getItem("decodedTokenID");
-          if(userInfo) {
+      const userToken = localStorage.getItem("decodedTokenID");
+          if(userToken) {
               // if token exist, redirect to dashboard
               this.props.history.push("/dashboard");
           }
-              console.log(userInfo);
+              console.log(userToken);
     }
 
    onChange = e => {
@@ -47,13 +47,15 @@ class  Signup extends Component{
       axios.post('/api/register', newUser)
 
          .then(res => {
-            console.log(res);
+            console.log(newUser);
             this.setState({isAuthenticated: true});
             console.log(this.state.isAuthenticated);
+                  //   window.location.assign('/dashboard')
          })
-         .then(res =>  this.props.history.push('/dashboard'))
+         .then( window.location.assign('/dashboard'))
+         // .then(res =>  this.props.history.push('/dashboard'))
          .catch(err => console.log(err));
-         // this.props.history.push('/dashboard');
+ 
 
       console.log('out here in submit');
    }
