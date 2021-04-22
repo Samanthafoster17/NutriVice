@@ -29,7 +29,7 @@ NutriVice was designed to take a user's weight, height, activity level, and food
 To run this app on a local computer, you will need MongoDB and Node.js;  All other dependencies can be installed through the package.json file found in the repo.  Do install dependencies, type 'npm install' in your CLI inside the file directory.  
 ## Usage
 
-Click the link to view the live version of the app:  https://nutrivice.herokuapp.com/
+Click the link to view the live version of the app:  https://nutriviceapp.herokuapp.com/
 
 ## License 
       This app is licensed under MIT.
