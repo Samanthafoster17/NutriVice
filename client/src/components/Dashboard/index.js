@@ -26,7 +26,7 @@ const Dashboard1 = (props) => {
         localStorage.removeItem("decodedTokenID");
         localStorage.removeItem("jwtToken");
        
-        window.location.assign('/signin')
+        window.location.assign('/')
         // props.history.push("/Signin");
     }
 
@@ -38,7 +38,7 @@ const Dashboard1 = (props) => {
             console.log("welcome");
         } else if (!userInfo) {
             // setAuthenticated(false);
-            // props.history.push("/signin");
+           
             window.location.assign('/')
         }
         console.log(userInfo);
