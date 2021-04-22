@@ -47,13 +47,17 @@ class  Signup extends Component{
       axios.post('/api/register', newUser)
 
          .then(res => {
-            console.log(newUser);
-            this.setState({isAuthenticated: true});
-            console.log(this.state.isAuthenticated);
+            console.log(newUser, res);
+            this.setState({isAuthenticated: true})
+          
                   //   window.location.assign('/dashboard')
          })
          // .then( window.location.assign('/dashboard'))
-         .then( this.props.history.push('/'))
+         .then( 
+         
+            console.log(this.state.isAuthenticated),
+            alert("Account created! you may now sign in!"),
+            this.props.history.push('/'))
          .catch(err => console.log(err));
  
 
@@ -128,6 +132,7 @@ render() {
                   type="password"
                   />
                </div>
+               <p><strong>Note:</strong> After creating account please return to *Sign In*</p>
                <button type="submit" className="btn btn-primary">Register</button>
                <p className="register grey-text text-darken-1">
                   Already have an account? <a href="/signin">Sign In</a>
